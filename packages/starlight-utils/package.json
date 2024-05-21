@@ -1,9 +1,9 @@
 {
-  "name": "@lorenzo_lewis/starlight-multi-sidebar",
+  "name": "@lorenzo_lewis/starlight-utils",
   "author": "Lorenzo Lewis",
-  "version": "0.1.3",
+  "version": "0.0.1",
   "license": "MIT",
-  "description": "Enable multiple sidebars with your Starlight site.",
+  "description": "A collection of utilities to build on top of your 🌟 Starlight site.",
   "type": "module",
   "exports": {
     ".": "./index.ts",
@@ -26,16 +26,14 @@
   "keywords": [
     "starlight",
     "plugin",
-    "sidebar",
-    "multi",
-    "multiple",
+    "utils",
     "astro"
   ],
-  "homepage": "https://starlight-multi-sidebar.pages.dev",
+  "homepage": "https://starlight-utils.pages.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lorenzolewis/starlight-multi-sidebar.git",
-    "directory": "packages/starlight-multi-sidebar"
+    "url": "https://github.com/lorenzolewis/starlight-utils.git",
+    "directory": "packages/starlight-utils"
   },
-  "bugs": "https://github.com/lorenzolewis/starlight-multi-sidebar/issues"
+  "bugs": "https://github.com/lorenzolewis/starlight-utils/issues"
 }

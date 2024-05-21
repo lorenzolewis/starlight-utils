@@ -2,7 +2,7 @@ import { defineIntegration, addVirtualImports } from "astro-integration-kit";
 import { configSchema } from "./config";
 
 export default defineIntegration({
-  name: "starlight-multi-sidebar-integration",
+  name: "starlight-utils-integration",
   optionsSchema: configSchema,
   setup({ name, options }) {
     return {
@@ -11,8 +11,8 @@ export default defineIntegration({
           addVirtualImports(params, {
             name,
             imports: {
-              "virtual:starlight-multi-sidebar/config": `export default ${JSON.stringify(
-                options,
+              "virtual:starlight-utils/config": `export default ${JSON.stringify(
+                options
               )}`,
             },
           });

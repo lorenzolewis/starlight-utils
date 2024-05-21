@@ -5,56 +5,28 @@ import { PackageManagers } from "starlight-package-managers";
 
 1.  Setup a Starlight Site: https://starlight.astro.build/getting-started/
 
-2.  Install the `starlight-multi-sidebar` plugin:
+2.  Install the `starlight-utils` plugin:
 
-    <PackageManagers pkg="@lorenzo_lewis/starlight-multi-sidebar" />
+    <PackageManagers pkg="@lorenzo_lewis/starlight-utils" />
 
-3.  Update the `integrations.starlight.plugins` object in `astro.config.mjs` to include the `starlight-multi-sidebar` plugin:
+3.  Update the `integrations.starlight.plugins` object in `astro.config.mjs` to include the `starlight-utils` plugin:
 
     ```ts ins={4, 10}
     // astro.config.mjs
     import { defineConfig } from "astro/config";
     import starlight from "@astrojs/starlight";
-    import starlightMultiSidebar from "@lorenzo_lewis/starlight-multi-sidebar";
+    import starlightUtils from "@lorenzo_lewis/starlight-utils";
 
     // https://astro.build/config
     export default defineConfig({
       integrations: [
         starlight({
-          plugins: [starlightMultiSidebar()],
+          plugins: [starlightUtils()],
         }),
       ],
     });
     ```
 
-4.  All top-level items in `integrations.starlight.sidebar` are turned into their own sidebar. Configure each desired sidebar:
-
-    ```ts ins={11-20}
-    // astro.config.mjs
-    import { defineConfig } from "astro/config";
-    import starlight from "@astrojs/starlight";
-    import starlightMultiSidebar from "@lorenzo_lewis/starlight-multi-sidebar";
-
-    // https://astro.build/config
-    export default defineConfig({
-      integrations: [
-        starlight({
-          plugins: [starlightMultiSidebar],
-          sidebar: [
-            {
-              label: "Guides",
-              autogenerate: { directory: "reference" },
-            },
-            {
-              label: "Reference",
-              autogenerate: { directory: "reference" },
-            },
-          ],
-        }),
-      ],
-    });
-    ```
-
-5.  All done! ✨
+4.  All done! ✨
 
 </Steps>

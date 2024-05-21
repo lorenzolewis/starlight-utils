@@ -1,16 +1,16 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import starlightMultiSidebar from "@lorenzo_lewis/starlight-nav";
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import starlightLinksValidatorPlugin from "starlight-links-validator";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://starlight-nav.pages.dev",
+  site: "https://starlight-utils.pages.dev",
   integrations: [
     starlight({
-      title: "🗄️ Starlight Multi-Sidebar",
+      title: "🧰 Starlight Utils",
       social: {
-        github: "https://github.com/lorenzolewis/starlight-multi-sidebar",
+        github: "https://github.com/lorenzolewis/starlight-utils",
       },
       sidebar: [
         {
@@ -23,10 +23,7 @@ export default defineConfig({
           badge: "Demo",
         },
       ],
-      plugins: [
-        starlightMultiSidebar({ switcherStyle: "horizontalList" }),
-        starlightLinksValidatorPlugin(),
-      ],
+      plugins: [starlightUtils(), starlightLinksValidatorPlugin()],
     }),
   ],
 });

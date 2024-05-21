@@ -5,14 +5,13 @@ import integration from "./integration";
 function plugin(userConfig?: StarlightMultiSidebarConfig): StarlightPlugin {
   const multiSidebarConfig = validateConfig(userConfig);
   return {
-    name: "starlight-multi-sidebar",
+    name: "starlight-utils",
     hooks: {
       setup({ config, updateConfig, addIntegration }) {
         updateConfig({
           components: {
             ...config.components,
-            Sidebar:
-              "@lorenzo_lewis/starlight-multi-sidebar/overrides/Sidebar.astro",
+            Sidebar: "@lorenzo_lewis/starlight-utils/overrides/Sidebar.astro",
           },
         });
         addIntegration(integration(multiSidebarConfig));
