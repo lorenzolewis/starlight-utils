@@ -1,16 +1,26 @@
 ---
 title: 🧰 Starlight Utils
-description: Enable multiple sidebars with your Starlight site.
+description: A collection of utilities to build on top of your 🌟 Starlight site.
+tableOfContents: false
+template: splash
 hero:
-  tagline: Enable multiple sidebars with your Starlight site.
+  tagline: A collection of utilities to build on top of your 🌟 Starlight site.
   image:
     file: ../../assets/houston.webp
   actions:
     - text: Get Started
-      link: /docs/
+      link: /docs
       icon: right-arrow
       variant: primary
 ---
+
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <LinkCard />
+  <LinkCard />
+  <LinkCard />
+</CardGrid>
 
 import QuickStart from "./_quick-start.mdx";
 
