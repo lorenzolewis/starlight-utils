@@ -1,0 +1,18 @@
+{
+  "name": "starlight-multi-sidebar-monorepo",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.3",
+    "astro": "^4.8.6",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.1"
+}

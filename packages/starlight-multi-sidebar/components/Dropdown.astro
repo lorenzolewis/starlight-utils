@@ -1,0 +1,135 @@
+---
+// Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/components/LanguageSelect.astro
+
+import type { Props as StarlightProps } from "@astrojs/starlight/props";
+import { Icon } from "@astrojs/starlight/components";
+import type { SidebarData } from "../overrides/Sidebar.astro";
+import Default from "@astrojs/starlight/components/Sidebar.astro";
+
+interface Props {
+  starlightProps: StarlightProps;
+  multiSidebarData: SidebarData[];
+}
+---
+
+<starlight-multi-sidebar-select>
+  <label>
+    <span class="sr-only">
+      {Astro.props.starlightProps.labels["menuButton.accessibleLabel"]}
+    </span>
+    <select>
+      {
+        Astro.props.multiSidebarData.map(({ isCurrentSidebar, labelEntry }) => (
+          <>
+            {labelEntry.type === "link" && (
+              <option
+                value={labelEntry.label}
+                selected={isCurrentSidebar}
+                set:html={labelEntry.label}
+                {...labelEntry.attrs}
+              />
+            )}
+            {labelEntry.type !== "link" && (
+              <option
+                value={labelEntry.label}
+                selected={isCurrentSidebar}
+                set:html={labelEntry.label}
+              />
+            )}
+          </>
+        ))
+      }
+    </select>
+    <Icon name="down-caret" class="icon" />
+  </label>
+  {
+    Astro.props.multiSidebarData.map(
+      ({ starlightProps, isCurrentSidebar, labelEntry }) => (
+        <div
+          hidden={!isCurrentSidebar}
+          data-starlight-multi-sidebar-label={labelEntry.label}
+        >
+          <Default {...starlightProps} />
+        </div>
+      )
+    )
+  }
+</starlight-multi-sidebar-select>
+
+<script>
+  class StarlightMultiSidebarSelect extends HTMLElement {
+    constructor() {
+      super();
+      const select = this.querySelector("select");
+      if (select) {
+        select.addEventListener("change", (e) => {
+          if (e.currentTarget instanceof HTMLSelectElement) {
+            const sidebarEntries = this.querySelectorAll(
+              `[data-starlight-multi-sidebar-label]`
+            );
+            sidebarEntries.forEach((entry) => {
+              if (entry instanceof HTMLDivElement) {
+                if (
+                  entry.dataset["starlightMultiSidebarLabel"] === select.value
+                ) {
+                  entry.hidden = false;
+                } else {
+                  entry.hidden = true;
+                }
+              }
+            });
+          }
+        });
+      }
+    }
+  }
+  customElements.define(
+    "starlight-multi-sidebar-select",
+    StarlightMultiSidebarSelect
+  );
+</script>
+<style>
+  label {
+    --sl-caret-size: 1.25rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--sl-color-gray-1);
+  }
+
+  label:hover {
+    color: var(--sl-color-gray-2);
+  }
+
+  label:hover > select {
+    border-color: var(--sl-color-gray-5);
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    transform: translateY(50%);
+    pointer-events: none;
+    font-size: var(--sl-caret-size);
+    inset-inline-end: 0.5rem;
+  }
+
+  select {
+    background-color: var(--sl-color-bg-nav);
+    box-shadow: var(--sl-shadow-sm);
+    border: 1px solid var(--sl-color-hairline-light);
+    padding-block: 0.3rem;
+    margin-bottom: 0.625rem;
+    padding-inline: 0.5rem calc(var(--sl-caret-size) + 0.5rem);
+    width: 100%;
+    text-overflow: ellipsis;
+    color: inherit;
+    cursor: pointer;
+    appearance: none;
+  }
+  option {
+    background-color: var(--sl-color-bg-nav);
+    color: var(--sl-color-gray-1);
+  }
+</style>

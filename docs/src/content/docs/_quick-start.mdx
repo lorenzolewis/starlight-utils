@@ -1,0 +1,60 @@
+import { Steps } from "@astrojs/starlight/components";
+import { PackageManagers } from "starlight-package-managers";
+
+<Steps>
+
+1.  Setup a Starlight Site: https://starlight.astro.build/getting-started/
+
+2.  Install the `starlight-multi-sidebar` plugin:
+
+    <PackageManagers pkg="@lorenzo_lewis/starlight-multi-sidebar" />
+
+3.  Update the `integrations.starlight.plugins` object in `astro.config.mjs` to include the `starlight-multi-sidebar` plugin:
+
+    ```ts ins={4, 10}
+    // astro.config.mjs
+    import { defineConfig } from "astro/config";
+    import starlight from "@astrojs/starlight";
+    import starlightMultiSidebar from "@lorenzo_lewis/starlight-multi-sidebar";
+
+    // https://astro.build/config
+    export default defineConfig({
+      integrations: [
+        starlight({
+          plugins: [starlightMultiSidebar()],
+        }),
+      ],
+    });
+    ```
+
+4.  All top-level items in `integrations.starlight.sidebar` are turned into their own sidebar. Configure each desired sidebar:
+
+    ```ts ins={11-20}
+    // astro.config.mjs
+    import { defineConfig } from "astro/config";
+    import starlight from "@astrojs/starlight";
+    import starlightMultiSidebar from "@lorenzo_lewis/starlight-multi-sidebar";
+
+    // https://astro.build/config
+    export default defineConfig({
+      integrations: [
+        starlight({
+          plugins: [starlightMultiSidebar],
+          sidebar: [
+            {
+              label: "Guides",
+              autogenerate: { directory: "reference" },
+            },
+            {
+              label: "Reference",
+              autogenerate: { directory: "reference" },
+            },
+          ],
+        }),
+      ],
+    });
+    ```
+
+5.  All done! ✨
+
+</Steps>

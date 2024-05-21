@@ -1,0 +1,186 @@
+---
+// Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/user-components/Tabs.astro
+
+import type { Props as StarlightProps } from "@astrojs/starlight/props";
+import type { SidebarData } from "../overrides/Sidebar.astro";
+import Sidebar from "@astrojs/starlight/components/Sidebar.astro";
+
+interface Props {
+  starlightProps: StarlightProps;
+  multiSidebarData: SidebarData[];
+}
+
+let count = 0;
+
+const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
+  const id = count++;
+  return {
+    panelId: "sidebar-panel-" + id,
+    tabId: "sidebar-tab-" + id,
+    ...sidebar,
+  };
+});
+---
+
+<starlight-multi-sidebar-tabs>
+  <div class="tablist-wrapper not-content">
+    <ul role="tablist">
+      {
+        sidebars.map(({ labelEntry, isCurrentSidebar, panelId, tabId }) => (
+          <li role="presentation" class="tab">
+            {labelEntry.type === "link" && (
+              <a
+                role="tab"
+                href={"#" + panelId}
+                id={tabId}
+                aria-selected={isCurrentSidebar ? "true" : "false"}
+                tabindex={isCurrentSidebar ? 0 : -1}
+                {...labelEntry.attrs}
+              >
+                {labelEntry.label}
+              </a>
+            )}
+            {labelEntry.type !== "link" && (
+              <a
+                role="tab"
+                href={"#" + panelId}
+                id={tabId}
+                aria-selected={isCurrentSidebar ? "true" : "false"}
+                tabindex={isCurrentSidebar ? 0 : -1}
+              >
+                {labelEntry.label}
+              </a>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  {
+    sidebars.map(({ isCurrentSidebar, starlightProps, tabId, panelId }) => (
+      <section
+        class="__collapse-content"
+        id={panelId}
+        aria-labelledby={tabId}
+        role="tabpanel"
+        hidden={!isCurrentSidebar}
+      >
+        <Sidebar {...starlightProps} />
+      </section>
+    ))
+  }
+</starlight-multi-sidebar-tabs>
+<style>
+  starlight-tabs {
+    display: block;
+  }
+
+  .tablist-wrapper {
+    overflow-x: auto;
+  }
+
+  [role="tablist"] {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    justify-content: space-around;
+    list-style: none;
+    padding-inline: 0.5rem;
+    padding-block-end: var(--sl-nav-pad-y);
+  }
+
+  .tab > [role="tab"] {
+    display: block;
+    text-align: center;
+    font-size: var(--sl-text-base);
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--sl-color-gray-2);
+    border-bottom: 1px solid var(--sl-color-gray-5);
+    padding-inline: 0.2rem;
+  }
+  .tab [role="tab"][aria-selected="true"] {
+    font-weight: 600;
+    border-width: 2px;
+    border-color: var(--sl-color-text-accent);
+    color: var(--sl-color-white);
+  }
+</style>
+
+<script>
+  class StarlighMultiSidebarTabs extends HTMLElement {
+    // A map of sync keys to all tabs that are synced to that key.
+
+    tabs: HTMLAnchorElement[];
+    panels: HTMLElement[];
+
+    constructor() {
+      super();
+      const tablist = this.querySelector<HTMLUListElement>('[role="tablist"]')!;
+      this.tabs = [
+        ...tablist.querySelectorAll<HTMLAnchorElement>('[role="tab"]'),
+      ];
+      this.panels = [
+        ...this.querySelectorAll<HTMLElement>(':scope > [role="tabpanel"]'),
+      ];
+
+      this.tabs.forEach((tab, i) => {
+        // Handle clicks for mouse users
+        tab.addEventListener("click", (e) => {
+          e.preventDefault();
+          const currentTab = tablist.querySelector('[aria-selected="true"]');
+          if (e.currentTarget !== currentTab) {
+            this.switchTab(e.currentTarget as HTMLAnchorElement, i);
+          }
+        });
+
+        // Handle keyboard input
+        tab.addEventListener("keydown", (e) => {
+          const index = this.tabs.indexOf(e.currentTarget as any);
+          // Work out which key the user is pressing and
+          // Calculate the new tab's index where appropriate
+          const nextIndex =
+            e.key === "ArrowLeft"
+              ? index - 1
+              : e.key === "ArrowRight"
+                ? index + 1
+                : e.key === "Home"
+                  ? 0
+                  : e.key === "End"
+                    ? this.tabs.length - 1
+                    : null;
+          if (nextIndex === null) return;
+          if (this.tabs[nextIndex]) {
+            e.preventDefault();
+            this.switchTab(this.tabs[nextIndex], nextIndex);
+          }
+        });
+      });
+    }
+
+    switchTab(newTab: HTMLAnchorElement | null | undefined, index: number) {
+      if (!newTab) return;
+
+      // Mark all tabs as unselected and hide all tab panels.
+      this.tabs.forEach((tab) => {
+        tab.setAttribute("aria-selected", "false");
+        tab.setAttribute("tabindex", "-1");
+      });
+      this.panels.forEach((oldPanel) => {
+        oldPanel.hidden = true;
+      });
+
+      // Show new panel and mark new tab as selected.
+      const newPanel = this.panels[index];
+      if (newPanel) newPanel.hidden = false;
+      // Restore active tab to the default tab order.
+      newTab.removeAttribute("tabindex");
+      newTab.setAttribute("aria-selected", "true");
+    }
+  }
+
+  customElements.define(
+    "starlight-multi-sidebar-tabs",
+    StarlighMultiSidebarTabs
+  );
+</script>
