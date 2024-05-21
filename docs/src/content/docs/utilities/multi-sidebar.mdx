@@ -1,0 +1,43 @@
+---
+title: Multi-Sidebar
+---
+
+There are cases where having multiple sidebars for a Starlight site can be useful. [Starlight does not currently support this natively](https://github.com/withastro/starlight/discussions/959), but this utility gives a minimal implementation of this.
+
+## Demo
+
+import { Sidebar } from "@lorenzo_lewis/starlight-utils/components";
+
+## Configuration
+
+See below for how to configure each of these actions.
+
+```ts {12-14}
+// astro.config.mjs
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightUtils from "@lorenzo_lewis/starlight-utils";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [
+    starlight({
+      plugins: [
+        starlightUtils({
+          multiSidebar: {
+            switcherStyle: "horizontalList",
+          },
+        }),
+      ],
+    }),
+  ],
+});
+```
+
+## `switcherStyle`
+
+**Type:** `"dropdown" | "horizontalList"`
+
+**Default:** `"horizontalList"`
+
+Specifies which style should be used for the sidebar.

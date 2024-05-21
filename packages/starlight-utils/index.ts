@@ -7,13 +7,7 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
   return {
     name: "starlight-utils",
     hooks: {
-      setup({ config, updateConfig, addIntegration }) {
-        updateConfig({
-          components: {
-            ...config.components,
-            Sidebar: "@lorenzo_lewis/starlight-utils/overrides/Sidebar.astro",
-          },
-        });
+      setup({ addIntegration }) {
         addIntegration(integration(multiSidebarConfig));
       },
     },

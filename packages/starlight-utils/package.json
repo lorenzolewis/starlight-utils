@@ -3,15 +3,13 @@
   "author": "Lorenzo Lewis",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "A collection of utilities to build on top of your 🌟 Starlight site.",
+  "description": "Utilities to use with your 🌟 Starlight site.",
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./overrides/Sidebar.astro": "./overrides/Sidebar.astro"
+    "./components": "./components/index.ts"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "devDependencies": {
     "@astrojs/starlight": "^0.23.1",
     "astro": "^4.8.6"

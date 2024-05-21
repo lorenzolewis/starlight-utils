@@ -2,9 +2,13 @@ import { AstroError } from "astro/errors";
 import { z } from "astro/zod";
 
 export const configSchema = z
-  .object({ switcherStyle: z.enum(["dropdown", "horizontalList"]) })
+  .object({
+    multiSidebar: z.object({
+      switcherStyle: z.enum(["dropdown", "horizontalList"]),
+    }),
+  })
   .optional()
-  .default({ switcherStyle: "horizontalList" });
+  .default({ multiSidebar: { switcherStyle: "horizontalList" } });
 
 export function validateConfig(userConfig: unknown): StarlightUtilsConfig {
   const config = configSchema.safeParse(userConfig);
