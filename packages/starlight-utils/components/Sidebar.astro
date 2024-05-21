@@ -4,6 +4,7 @@ import type { Props } from "@astrojs/starlight/props";
 import { AstroError } from "astro/errors";
 import Dropdown from "./Dropdown.astro";
 import HorizontalList from "./HorizontalList.astro";
+import Default from "@astrojs/starlight/components/Sidebar.astro";
 
 export type SidebarData = {
   isCurrentSidebar: boolean;
@@ -19,6 +20,7 @@ export type SidebarData = {
 // 1. Validate the config is set up correctly
 // 2. Create a new derived set of `Astro.props` that only contains one set of sidebar entries
 // 3. Check if the current page being rendered is current page to determine if this sidebar group should be selected
+
 const multiSidebarConfig: Array<SidebarData> = Astro.props.sidebar.map(
   (entry) => {
     if (entry.type !== "group") {
@@ -58,18 +60,22 @@ if (!multiSidebarConfig.some(({ isCurrentSidebar }) => isCurrentSidebar)) {
 ---
 
 {
-  config.switcherStyle == "dropdown" && (
-    <Dropdown
-      starlightProps={Astro.props}
-      multiSidebarData={multiSidebarConfig}
-    />
-  )
-}
-{
-  config.switcherStyle == "horizontalList" && (
-    <HorizontalList
-      starlightProps={Astro.props}
-      multiSidebarData={multiSidebarConfig}
-    />
+  config?.multiSidebar ? (
+    <>
+      {config.multiSidebar.switcherStyle == "dropdown" && (
+        <Dropdown
+          starlightProps={Astro.props}
+          multiSidebarData={multiSidebarConfig}
+        />
+      )}
+      {config.multiSidebar.switcherStyle == "horizontalList" && (
+        <HorizontalList
+          starlightProps={Astro.props}
+          multiSidebarData={multiSidebarConfig}
+        />
+      )}
+    </>
+  ) : (
+    <Default {...Astro.props} />
   )
 }
