@@ -1,4 +1,4 @@
-# 🗄️ Starlight Utils
+# 🧰 Starlight Utils
 
 Utilities to use with your 🌟 [Starlight](https://starlight.astro.build) site.
 
