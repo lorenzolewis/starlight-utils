@@ -14,19 +14,25 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "Docs",
-          autogenerate: { directory: "/docs" },
+          label: "Main",
+          items: [
+            { label: "Docs", autogenerate: { directory: "/docs" } },
+            {
+              label: "Utilities",
+              autogenerate: { directory: "/utilities" },
+            },
+          ],
         },
         {
-          label: "Utilities",
-          autogenerate: { directory: "/utilities" },
-        },
-        {
-          label: "References",
-          autogenerate: { directory: "/references" },
+          label: "Demos",
+          autogenerate: { directory: "/demos" },
         },
       ],
-      plugins: [starlightLinksValidatorPlugin(), starlightUtils()],
+      components: {},
+      plugins: [
+        starlightLinksValidatorPlugin(),
+        starlightUtils({ multiSidebar: true }),
+      ],
     }),
   ],
 });
