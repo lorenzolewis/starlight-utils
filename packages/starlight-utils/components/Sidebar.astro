@@ -1,10 +1,9 @@
 ---
-// @ts-expect-error Can't dynamically define this
 import config from "virtual:starlight-utils/config";
 import type { Props } from "@astrojs/starlight/props";
 import { AstroError } from "astro/errors";
-import Dropdown from "../components/Dropdown.astro";
-import HorizontalList from "../components/HorizontalList.astro";
+import Dropdown from "./Dropdown.astro";
+import HorizontalList from "./HorizontalList.astro";
 
 export type SidebarData = {
   isCurrentSidebar: boolean;

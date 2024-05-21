@@ -1,3 +1,3 @@
-import Sidebar from "../overrides/Sidebar.astro";
+import Sidebar from "./Sidebar.astro";
 
 export { Sidebar };
