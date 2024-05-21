@@ -32,9 +32,9 @@ importers:
       '@astrojs/starlight':
         specifier: ^0.23.1
         version: 0.23.1(astro@4.8.6(typescript@5.4.5))
-      '@lorenzo_lewis/starlight-multi-sidebar':
+      '@lorenzo_lewis/starlight-utils':
         specifier: workspace:*
-        version: link:../packages/starlight-multi-sidebar
+        version: link:../packages/starlight-utils
       astro:
         specifier: ^4.8.6
         version: 4.8.6(typescript@5.4.5)
@@ -51,7 +51,7 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
-  packages/starlight-multi-sidebar:
+  packages/starlight-utils:
     dependencies:
       astro-integration-kit:
         specifier: ^0.13.3
