@@ -1,8 +1,8 @@
 import type { StarlightPlugin } from "@astrojs/starlight/types";
-import { validateConfig, type StarlightMultiSidebarConfig } from "./config";
+import { validateConfig, type StarlightUtilsConfig } from "./config";
 import integration from "./integration";
 
-function plugin(userConfig?: StarlightMultiSidebarConfig): StarlightPlugin {
+function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
   const multiSidebarConfig = validateConfig(userConfig);
   return {
     name: "starlight-utils",

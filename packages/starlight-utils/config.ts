@@ -6,15 +6,13 @@ export const configSchema = z
   .optional()
   .default({ switcherStyle: "horizontalList" });
 
-export function validateConfig(
-  userConfig: unknown,
-): StarlightMultiSidebarConfig {
+export function validateConfig(userConfig: unknown): StarlightUtilsConfig {
   const config = configSchema.safeParse(userConfig);
 
   if (!config.success) {
     const errors = config.error.flatten();
     throw new AstroError(
-      `Invalid starlight-multi-sidebar configuration:
+      `Invalid starlight-utils configuration:
 
             ${errors.formErrors
               .map((formError) => ` - ${formError}`)
@@ -22,14 +20,14 @@ export function validateConfig(
             ${Object.entries(errors.fieldErrors)
               .map(
                 ([fieldName, fieldErrors]) =>
-                  `- ${fieldName}: ${JSON.stringify(fieldErrors)}`,
+                  `- ${fieldName}: ${JSON.stringify(fieldErrors)}`
               )
               .join("\n")}
-            `,
+            `
     );
   }
 
   return config.data;
 }
 
-export type StarlightMultiSidebarConfig = z.infer<typeof configSchema>;
+export type StarlightUtilsConfig = z.infer<typeof configSchema>;
