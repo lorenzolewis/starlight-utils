@@ -7,7 +7,8 @@
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./components": "./components/index.ts"
+    "./components": "./components/index.ts",
+    "./components/Sidebar.astro": "./components/Sidebar.astro"
   },
   "scripts": {},
   "devDependencies": {

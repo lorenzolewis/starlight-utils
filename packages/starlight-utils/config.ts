@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 const multiSidebarConfig = z
   .union([
     z.object({ switcherStyle: z.enum(["dropdown", "horizontalList"]) }),
-    z.boolean().transform(() => ({ switcherStyle: "horizontalList" })),
+    z.boolean(),
   ])
   .optional();
 
@@ -12,8 +12,9 @@ export const configSchema = z
   .object({
     multiSidebar: multiSidebarConfig,
   })
-  .optional()
-  .default({});
+  .optional();
+
+export type StarlightUtilsConfig = z.infer<typeof configSchema>;
 
 export function validateConfig(userConfig: unknown): StarlightUtilsConfig {
   const config = configSchema.safeParse(userConfig);
@@ -38,5 +39,3 @@ export function validateConfig(userConfig: unknown): StarlightUtilsConfig {
 
   return config.data;
 }
-
-export type StarlightUtilsConfig = z.infer<typeof configSchema>;

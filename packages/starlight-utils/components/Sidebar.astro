@@ -57,18 +57,30 @@ const multiSidebarConfig: Array<SidebarData> = Astro.props.sidebar.map(
 if (!multiSidebarConfig.some(({ isCurrentSidebar }) => isCurrentSidebar)) {
   multiSidebarConfig[0].isCurrentSidebar = true;
 }
+
+console.log(config?.multiSidebar);
+
+let multiSidebarStyle = undefined;
+
+if (config?.multiSidebar) {
+  if (typeof config.multiSidebar === "boolean" && config.multiSidebar == true) {
+    multiSidebarStyle = "horizontalList";
+  } else {
+    multiSidebarStyle = config.multiSidebar.switcherStyle;
+  }
+}
 ---
 
 {
-  config?.multiSidebar ? (
+  multiSidebarStyle ? (
     <>
-      {config.multiSidebar.switcherStyle == "dropdown" && (
+      {multiSidebarStyle == "dropdown" && (
         <Dropdown
           starlightProps={Astro.props}
           multiSidebarData={multiSidebarConfig}
         />
       )}
-      {config.multiSidebar.switcherStyle == "horizontalList" && (
+      {multiSidebarStyle == "horizontalList" && (
         <HorizontalList
           starlightProps={Astro.props}
           multiSidebarData={multiSidebarConfig}
