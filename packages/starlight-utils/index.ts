@@ -9,15 +9,19 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
     hooks: {
       setup({ addIntegration, config, updateConfig }) {
         addIntegration(integration(utilsConfig));
-        if (utilsConfig?.multiSidebar) {
-          updateConfig({
-            components: {
-              Sidebar:
-                "@lorenzo_lewis/starlight-utils/components/Sidebar.astro",
-              ...config.components,
-            },
-          });
+        const componentOverrides: typeof config.components = {};
+        componentOverrides.Sidebar =
+          "@lorenzo_lewis/starlight-utils/components/Sidebar.astro";
+        if (utilsConfig?.navLinks?.leading) {
+          componentOverrides.SiteTitle =
+            "@lorenzo_lewis/starlight-utils/components/SiteTitle.astro";
         }
+        updateConfig({
+          components: {
+            ...componentOverrides,
+            ...config.components,
+          },
+        });
       },
     },
   };
