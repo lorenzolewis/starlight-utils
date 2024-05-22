@@ -19,9 +19,16 @@ const multiSidebarConfig = z
   ])
   .optional();
 
+const navLinksConfig = z
+  .object({
+    leading: z.object({ useSidebarLabelled: z.string() }).optional(),
+  })
+  .optional();
+
 export const configSchema = z
   .object({
     multiSidebar: multiSidebarConfig,
+    navLinks: navLinksConfig,
   })
   .optional();
 

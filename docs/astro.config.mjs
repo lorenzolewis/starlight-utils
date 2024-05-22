@@ -27,11 +27,23 @@ export default defineConfig({
           label: "Demos",
           autogenerate: { directory: "/demos" },
         },
+        {
+          label: "leading",
+          items: [
+            { label: "Docs", link: "/docs" },
+            { label: "Demos", link: "/demos/1" },
+          ],
+        },
       ],
       components: {},
       plugins: [
         starlightLinksValidatorPlugin(),
-        starlightUtils({ multiSidebar: true }),
+        starlightUtils({
+          multiSidebar: true,
+          navLinks: {
+            leading: { useSidebarLabelled: "leading" },
+          },
+        }),
       ],
     }),
   ],

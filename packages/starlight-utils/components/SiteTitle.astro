@@ -1,0 +1,19 @@
+---
+import Default from "@astrojs/starlight/components/SiteTitle.astro";
+import NavLinks from "./NavLinks.astro";
+
+import type { Props } from "@astrojs/starlight/props";
+---
+
+<div>
+  <Default {...Astro.props} />
+  <NavLinks position="leading" {...Astro.props} />
+</div>
+
+<style>
+  div {
+    display: flex;
+    align-items: center;
+    gap: var(--sl-nav-gap);
+  }
+</style>
