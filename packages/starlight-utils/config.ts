@@ -2,11 +2,21 @@ import { AstroError } from "astro/errors";
 import { z } from "astro/zod";
 
 const multiSidebarConfig = z
-  .object({
-    switcherStyle: z
-      .enum(["dropdown", "horizontalList"])
-      .default("horizontalList"),
-  })
+  .union([
+    z.object({
+      switcherStyle: z.union([
+        z.enum(["dropdown", "horizontalList"]).default("horizontalList"),
+        z.boolean(),
+      ]),
+    }),
+    z.boolean().transform((value) => {
+      if (value) {
+        return { switcherStyle: "horizontalList" as const };
+      } else {
+        return undefined;
+      }
+    }),
+  ])
   .optional();
 
 export const configSchema = z
