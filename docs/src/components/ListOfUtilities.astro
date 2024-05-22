@@ -1,0 +1,30 @@
+---
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { getCollection } from "astro:content";
+
+interface Props {
+  withConfiguration?: boolean;
+}
+
+const { withConfiguration = false } = Astro.props;
+
+const utilities = await getCollection("docs", ({ slug }) => {
+  return slug.startsWith("utilities");
+});
+---
+
+<CardGrid>
+  {
+    utilities.map((util) => (
+      <LinkCard
+        title={util.data.title}
+        description={util.data.description}
+        href={
+          withConfiguration
+            ? "/" + util.slug + "/#configuration"
+            : "/" + util.slug
+        }
+      />
+    ))
+  }
+</CardGrid>
