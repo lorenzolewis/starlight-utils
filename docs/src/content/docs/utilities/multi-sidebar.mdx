@@ -6,13 +6,19 @@ sidebar:
     variant: tip
 ---
 
-There are cases where having multiple sidebars for a Starlight site can be useful. [Starlight does not currently support this natively](https://github.com/withastro/starlight/discussions/959), but this utility gives a minimal implementation of this.
-
-import { Icon } from "@astrojs/starlight/components";
-
 :::tip
 
 You can see the `horizontalList` sidebar style in action in this site's sidebar.
+
+:::
+
+There are cases where having multiple sidebars for a Starlight site can be useful. [Starlight does not currently support this natively](https://github.com/withastro/starlight/discussions/959), but this utility gives a minimal implementation of this.
+
+:::note[Migration]
+
+Multi-sidebar was originally launched in the (now deprecated) `@lorenzo_lewis/starlight-multi-sidebar` package.
+
+If migrating from that package read the [Migration Steps](#migration) below.
 
 :::
 
@@ -44,8 +50,52 @@ export default defineConfig({
 
 ### `multiSidebar`
 
-**Type:** `boolean | { switcherStyle: "dropdown" | "horizontalList" }`
+**Type:** `boolean | { switcherStyle: "dropdown" | "horizontalList" } | undefined`
 
 - If `true`, the sidebar will be rendered with the `horizontalList` switcher style.
-- If no `multiSidebar` key is set, or if the value is `false`, then the default Starlight sidebar will be used.
-- Otherwise, the `switcherStyle` value will be used.
+- If no `multiSidebar` key is set, or if the value is `false` or `undefined`, then the default Starlight sidebar will be used.
+- Otherwise, the value specified in `switcherStyle` will be used.
+
+## Migration
+
+`@lorenzo_lewis/starlight-multi-sidebar` has been deprecated in favor of this package.
+
+Here are the steps for migrating from `@lorenzo_lewis/starlight-multi-sidebar`:
+
+import { Steps } from "@astrojs/starlight/components";
+import { PackageManagers } from "starlight-package-managers";
+
+<Steps>
+
+{/* Pending https://github.com/HiDeoo/starlight-package-managers/pull/8 */}
+
+1. Switch to `@lorenzo_lewis/starlight-utils` by running the following commands:
+
+   `npm uninstall @lorenzo_lewis/starlight-multi-sidebar`  
+   `npm install @lorenzo_lewis/starlight-utils`
+
+2. Update the integration in `astro.config.mts`:
+
+   ```ts ins={4, 12} del={5, 13}
+   // astro.config.mjs
+   import { defineConfig } from "astro/config";
+   import starlight from "@astrojs/starlight";
+   import starlightUtils from "@lorenzo_lewis/starlight-utils";
+   import starlightMultiSidebar from "@lorenzo_lewis/starlight-multi-sidebar";
+
+   // https://astro.build/config
+   export default defineConfig({
+     integrations: [
+       starlight({
+         plugins: [
+           starlightUtils({ multiSidebar: true }),
+           starlightMultiSidebar(),
+         ],
+       }),
+     ],
+   });
+   ```
+
+   Any configuration options used before are also compatible and can be passed to the `multiSidebar` object.
+
+</Steps>
