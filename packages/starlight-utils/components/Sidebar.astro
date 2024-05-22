@@ -21,7 +21,7 @@ export type SidebarData = {
 // 2. Create a new derived set of `Astro.props` that only contains one set of sidebar entries
 // 3. Check if the current page being rendered is current page to determine if this sidebar group should be selected
 
-const multiSidebarConfig: Array<SidebarData> = Astro.props.sidebar.map(
+const multiSidebarData: Array<SidebarData> = Astro.props.sidebar.map(
   (entry) => {
     if (entry.type !== "group") {
       throw new AstroError(
@@ -54,37 +54,22 @@ const multiSidebarConfig: Array<SidebarData> = Astro.props.sidebar.map(
 );
 
 // If the current page being built is not on a sidebar then set the first sidebar to be shown
-if (!multiSidebarConfig.some(({ isCurrentSidebar }) => isCurrentSidebar)) {
-  multiSidebarConfig[0].isCurrentSidebar = true;
-}
-
-console.log(config?.multiSidebar);
-
-let multiSidebarStyle = undefined;
-
-if (config?.multiSidebar) {
-  if (typeof config.multiSidebar === "boolean" && config.multiSidebar == true) {
-    multiSidebarStyle = "horizontalList";
-  } else {
-    multiSidebarStyle = config.multiSidebar.switcherStyle;
-  }
+if (
+  multiSidebarData[0] &&
+  !multiSidebarData.some(({ isCurrentSidebar }) => isCurrentSidebar)
+) {
+  multiSidebarData[0].isCurrentSidebar = true;
 }
 ---
 
 {
-  multiSidebarStyle ? (
+  config?.multiSidebar ? (
     <>
-      {multiSidebarStyle == "dropdown" && (
-        <Dropdown
-          starlightProps={Astro.props}
-          multiSidebarData={multiSidebarConfig}
-        />
+      {config.multiSidebar.switcherStyle === "dropdown" && (
+        <Dropdown starlightProps={Astro.props} {multiSidebarData} />
       )}
-      {multiSidebarStyle == "horizontalList" && (
-        <HorizontalList
-          starlightProps={Astro.props}
-          multiSidebarData={multiSidebarConfig}
-        />
+      {config.multiSidebar.switcherStyle === "horizontalList" && (
+        <HorizontalList starlightProps={Astro.props} {multiSidebarData} />
       )}
     </>
   ) : (

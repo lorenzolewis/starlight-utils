@@ -9,14 +9,15 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
     hooks: {
       setup({ addIntegration, config, updateConfig }) {
         addIntegration(integration(utilsConfig));
-        const internalConfig = config;
         if (utilsConfig?.multiSidebar) {
-          internalConfig.components ??= {};
-          internalConfig.components.Sidebar =
-            "@lorenzo_lewis/starlight-utils/components/Sidebar.astro";
+          updateConfig({
+            components: {
+              Sidebar:
+                "@lorenzo_lewis/starlight-utils/components/Sidebar.astro",
+              ...config.components,
+            },
+          });
         }
-
-        updateConfig({ components: { ...internalConfig.components } });
       },
     },
   };
