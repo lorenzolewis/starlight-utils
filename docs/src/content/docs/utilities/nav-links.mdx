@@ -35,9 +35,9 @@ import { Steps } from "@astrojs/starlight/components";
    export default defineConfig({
      integrations: [
        starlight({
-         sidebar: [
+         sidebar: [{
             label: "leadingNavLinks",
-         ],
+         }],
        }),
      ],
    });
@@ -57,13 +57,13 @@ import { Steps } from "@astrojs/starlight/components";
    export default defineConfig({
      integrations: [
        starlight({
-         sidebar: [
+         sidebar: [{
             label: "leadingNavLinks",
             items: [
               { label: "Docs", link: "/docs" },
               { label: "References": link: "/references" }
             ]
-         ],
+         }],
        }),
      ],
    });
@@ -83,13 +83,13 @@ import { Steps } from "@astrojs/starlight/components";
    export default defineConfig({
     integrations: [
       starlight({
-        sidebar: [
+        sidebar: [{
            label: "leadingNavLinks",
            items: [
              { label: "Docs", link: "/docs" },
              { label: "References": link: "/references" }
            ]
-        ],
+        }],
         plugins: [
           starlightUtils({
             navLinks: {
