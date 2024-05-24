@@ -68,12 +68,15 @@ import { PackageManagers } from "starlight-package-managers";
 
 <Steps>
 
-1. Switch to `@lorenzo_lewis/starlight-utils` by running the following commands:
+1. Switch to `@lorenzo_lewis/starlight-utils` by running this command to remove the deprecated package:
 
    <PackageManagers
      type="remove"
      pkg="@lorenzo_lewis/starlight-multi-sidebar"
    />
+
+   Then this command to add the new package:
+
    <PackageManagers type="add" pkg="@lorenzo_lewis/starlight-utils" />
 
 2. Update the integration in `astro.config.mts`:
