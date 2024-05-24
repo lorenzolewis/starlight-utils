@@ -68,12 +68,13 @@ import { PackageManagers } from "starlight-package-managers";
 
 <Steps>
 
-{/* Pending https://github.com/HiDeoo/starlight-package-managers/pull/8 */}
-
 1. Switch to `@lorenzo_lewis/starlight-utils` by running the following commands:
 
-   `npm uninstall @lorenzo_lewis/starlight-multi-sidebar`  
-   `npm install @lorenzo_lewis/starlight-utils`
+   <PackageManagers
+     type="remove"
+     pkg="@lorenzo_lewis/starlight-multi-sidebar"
+   />
+   <PackageManagers type="add" pkg="@lorenzo_lewis/starlight-utils" />
 
 2. Update the integration in `astro.config.mts`:
 
