@@ -48,8 +48,8 @@ importers:
         specifier: ^0.8.0
         version: 0.8.0(@astrojs/starlight@0.23.1(astro@4.8.7(typescript@5.4.5)))(astro@4.8.7(typescript@5.4.5))
       starlight-package-managers:
-        specifier: ^0.5.0
-        version: 0.5.0(@astrojs/starlight@0.23.1(astro@4.8.7(typescript@5.4.5)))(astro@4.8.7(typescript@5.4.5))
+        specifier: ^0.6.0
+        version: 0.6.0(@astrojs/starlight@0.23.1(astro@4.8.7(typescript@5.4.5)))(astro@4.8.7(typescript@5.4.5))
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2717,8 +2717,8 @@ packages:
       '@astrojs/starlight': '>=0.15.0'
       astro: '>=4.0.0'
 
-  starlight-package-managers@0.5.0:
-    resolution: {integrity: sha512-Jbt5lsIx5UKbzADKVY0YS+oZSHsSnJiUhvnsAxCw1dT8ygE4XJlupNykpRT0vsadHivFfUPZAlKOaPk1d6cFww==}
+  starlight-package-managers@0.6.0:
+    resolution: {integrity: sha512-2tE0B4ZVEZXZ1LJjcSvVXLfJP8SB2nE+nhiFgSa3fuHUPtnbzmFxLVp7jEKD8jaMXKWPYtlNTy95gJSK9W1sbQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       '@astrojs/starlight': '>=0.22.0'
@@ -6619,7 +6619,7 @@ snapshots:
       mdast-util-to-string: 4.0.0
       unist-util-visit: 5.0.0
 
-  starlight-package-managers@0.5.0(@astrojs/starlight@0.23.1(astro@4.8.7(typescript@5.4.5)))(astro@4.8.7(typescript@5.4.5)):
+  starlight-package-managers@0.6.0(@astrojs/starlight@0.23.1(astro@4.8.7(typescript@5.4.5)))(astro@4.8.7(typescript@5.4.5)):
     dependencies:
       '@astrojs/starlight': 0.23.1(astro@4.8.7(typescript@5.4.5))
       astro: 4.8.7(typescript@5.4.5)
