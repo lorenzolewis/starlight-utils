@@ -4,6 +4,7 @@
 import type { Props as StarlightProps } from "@astrojs/starlight/props";
 import type { SidebarData } from "./Sidebar.astro";
 import Sidebar from "@astrojs/starlight/components/Sidebar.astro";
+import { Badge } from "@astrojs/starlight/components";
 
 interface Props {
   starlightProps: StarlightProps;
@@ -37,7 +38,8 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
                 tabindex={isCurrentSidebar ? 0 : -1}
                 {...labelEntry.attrs}
               >
-                {labelEntry.label}
+                <span>{labelEntry.label}</span>
+                {labelEntry.badge && <Badge {...labelEntry.badge} />}
               </a>
             )}
             {labelEntry.type !== "link" && (
@@ -48,7 +50,8 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
                 aria-selected={isCurrentSidebar ? "true" : "false"}
                 tabindex={isCurrentSidebar ? 0 : -1}
               >
-                {labelEntry.label}
+                <span>{labelEntry.label}</span>
+                {labelEntry.badge && <Badge {...labelEntry.badge} />}
               </a>
             )}
           </li>

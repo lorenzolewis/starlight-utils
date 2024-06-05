@@ -26,6 +26,7 @@ export default defineConfig({
         },
         {
           label: "Demos",
+          badge: "New",
           autogenerate: { directory: "/demos" },
         },
         {
