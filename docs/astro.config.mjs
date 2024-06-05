@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "🧰 Starlight Utils",
+      credits: true,
       social: {
         github: "https://github.com/lorenzolewis/starlight-utils",
       },
