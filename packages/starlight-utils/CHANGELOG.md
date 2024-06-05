@@ -1,5 +1,11 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.1.1
+
+### Patch Changes
+
+- [#21](https://github.com/lorenzolewis/starlight-utils/pull/21) [`2dcee08`](https://github.com/lorenzolewis/starlight-utils/commit/2dcee083e56d4dcc9a27e77895085a7b081e21f1) Thanks [@lorenzolewis](https://github.com/lorenzolewis)! - Enable badge's for horizontal list style of multi-sidebar.
+
 ## 0.1.0
 
 ### Minor Changes
