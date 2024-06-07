@@ -15,8 +15,8 @@ importers:
         specifier: ^2.27.5
         version: 2.27.5
       astro:
-        specifier: ^4.9.3
-        version: 4.9.3(typescript@5.4.5)
+        specifier: ^4.10.0
+        version: 4.10.0(typescript@5.4.5)
       prettier:
         specifier: ^3.3.1
         version: 3.3.1
@@ -34,22 +34,22 @@ importers:
         version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.1)(typescript@5.4.5)
       '@astrojs/starlight':
         specifier: ^0.24.0
-        version: 0.24.0(astro@4.9.3(typescript@5.4.5))
+        version: 0.24.0(astro@4.10.0(typescript@5.4.5))
       '@lorenzo_lewis/starlight-utils':
         specifier: workspace:*
         version: link:../packages/starlight-utils
       astro:
-        specifier: ^4.9.3
-        version: 4.9.3(typescript@5.4.5)
+        specifier: ^4.10.0
+        version: 4.10.0(typescript@5.4.5)
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
       starlight-links-validator:
         specifier: ^0.8.0
-        version: 0.8.0(@astrojs/starlight@0.24.0(astro@4.9.3(typescript@5.4.5)))(astro@4.9.3(typescript@5.4.5))
+        version: 0.8.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
       starlight-package-managers:
         specifier: ^0.6.0
-        version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.9.3(typescript@5.4.5)))(astro@4.9.3(typescript@5.4.5))
+        version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -58,14 +58,14 @@ importers:
     dependencies:
       astro-integration-kit:
         specifier: ^0.13.3
-        version: 0.13.3(astro@4.9.3(typescript@5.4.5))
+        version: 0.13.3(astro@4.10.0(typescript@5.4.5))
     devDependencies:
       '@astrojs/starlight':
         specifier: ^0.24.0
-        version: 0.24.0(astro@4.9.3(typescript@5.4.5))
+        version: 0.24.0(astro@4.10.0(typescript@5.4.5))
       astro:
-        specifier: ^4.9.3
-        version: 4.9.3(typescript@5.4.5)
+        specifier: ^4.10.0
+        version: 4.10.0(typescript@5.4.5)
 
 packages:
 
@@ -1084,8 +1084,8 @@ packages:
       '@astrojs/db':
         optional: true
 
-  astro@4.9.3:
-    resolution: {integrity: sha512-LhiKZMee56GI7+zIt15bXZVX4JSnj4syTrQdkYNgE+Y0udMad0x8RgJGzc2NMOK31e6w/SL+NFSvnt/d1kgs5w==}
+  astro@4.10.0:
+    resolution: {integrity: sha512-UNVGGZIwdEPIUumcwgIQnd90b4/PslReY9q3xy/Q6bIq/kvK0duIWCbhFPwf06xu+1tExziP9Jl+klvLXM0LfA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2014,9 +2014,6 @@ packages:
   mdast-util-find-and-replace@3.0.1:
     resolution: {integrity: sha512-SG21kZHGC3XRTSUhtofZkBzZTJNM5ecCi0SK2IMKmSXR8vO3peL+kb1O0z7Zl83jKtutG4k5Wv/W7V3/YHvzPA==}
 
-  mdast-util-from-markdown@2.0.0:
-    resolution: {integrity: sha512-n7MTOr/z+8NAX/wmhhDji8O3bRvPTV/U0oTCaZJkjhPSKTPhS3xufVhKGF8s1pJ7Ox4QgoIU7KHseh09S+9rTA==}
-
   mdast-util-from-markdown@2.0.1:
     resolution: {integrity: sha512-aJEUyzZ6TzlsX2s5B4Of7lN7EQtAxvtradMMglCQDyaTFgse6CmtmdJ15ElnVRlCg1vpNyVtbem0PWzlNieZsA==}
 
@@ -2375,9 +2372,6 @@ packages:
 
   periscopic@3.1.0:
     resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==}
-
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -3302,12 +3296,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.0.1(astro@4.9.3(typescript@5.4.5))':
+  '@astrojs/mdx@3.0.1(astro@4.10.0(typescript@5.4.5))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.9.3(typescript@5.4.5)
+      astro: 4.10.0(typescript@5.4.5)
       es-module-lexer: 1.5.3
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -3333,15 +3327,15 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/starlight@0.24.0(astro@4.9.3(typescript@5.4.5))':
+  '@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5))':
     dependencies:
-      '@astrojs/mdx': 3.0.1(astro@4.9.3(typescript@5.4.5))
+      '@astrojs/mdx': 3.0.1(astro@4.10.0(typescript@5.4.5))
       '@astrojs/sitemap': 3.1.5
       '@pagefind/default-ui': 1.1.0
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      astro: 4.9.3(typescript@5.4.5)
-      astro-expressive-code: 0.35.3(astro@4.9.3(typescript@5.4.5))
+      astro: 4.10.0(typescript@5.4.5)
+      astro-expressive-code: 0.35.3(astro@4.10.0(typescript@5.4.5))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.1
       hast-util-select: 6.0.2
@@ -4336,18 +4330,18 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro-expressive-code@0.35.3(astro@4.9.3(typescript@5.4.5)):
+  astro-expressive-code@0.35.3(astro@4.10.0(typescript@5.4.5)):
     dependencies:
-      astro: 4.9.3(typescript@5.4.5)
+      astro: 4.10.0(typescript@5.4.5)
       rehype-expressive-code: 0.35.3
 
-  astro-integration-kit@0.13.3(astro@4.9.3(typescript@5.4.5)):
+  astro-integration-kit@0.13.3(astro@4.10.0(typescript@5.4.5)):
     dependencies:
-      astro: 4.9.3(typescript@5.4.5)
+      astro: 4.10.0(typescript@5.4.5)
       pathe: 1.1.2
       recast: 0.23.7
 
-  astro@4.9.3(typescript@5.4.5):
+  astro@4.10.0(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -5501,7 +5495,7 @@ snapshots:
 
   mdast-util-definitions@6.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       '@types/unist': 3.0.2
       unist-util-visit: 5.0.0
 
@@ -5520,27 +5514,10 @@ snapshots:
 
   mdast-util-find-and-replace@3.0.1:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       escape-string-regexp: 5.0.0
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
-
-  mdast-util-from-markdown@2.0.0:
-    dependencies:
-      '@types/mdast': 4.0.3
-      '@types/unist': 3.0.2
-      decode-named-character-reference: 1.0.2
-      devlop: 1.1.0
-      mdast-util-to-string: 4.0.0
-      micromark: 4.0.0
-      micromark-util-decode-numeric-character-reference: 2.0.1
-      micromark-util-decode-string: 2.0.0
-      micromark-util-normalize-identifier: 2.0.0
-      micromark-util-symbol: 2.0.0
-      micromark-util-types: 2.0.0
-      unist-util-stringify-position: 4.0.0
-    transitivePeerDependencies:
-      - supports-color
 
   mdast-util-from-markdown@2.0.1:
     dependencies:
@@ -5561,7 +5538,7 @@ snapshots:
 
   mdast-util-gfm-autolink-literal@2.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       ccount: 2.0.1
       devlop: 1.1.0
       mdast-util-find-and-replace: 3.0.1
@@ -5569,9 +5546,9 @@ snapshots:
 
   mdast-util-gfm-footnote@2.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
       micromark-util-normalize-identifier: 2.0.0
     transitivePeerDependencies:
@@ -5579,34 +5556,34 @@ snapshots:
 
   mdast-util-gfm-strikethrough@2.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
-      mdast-util-from-markdown: 2.0.0
+      '@types/mdast': 4.0.4
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
       - supports-color
 
   mdast-util-gfm-table@2.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       devlop: 1.1.0
       markdown-table: 3.0.3
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
       - supports-color
 
   mdast-util-gfm-task-list-item@2.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
       - supports-color
 
   mdast-util-gfm@3.0.0:
     dependencies:
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-gfm-autolink-literal: 2.0.0
       mdast-util-gfm-footnote: 2.0.0
       mdast-util-gfm-strikethrough: 2.0.0
@@ -5620,9 +5597,9 @@ snapshots:
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -5631,11 +5608,11 @@ snapshots:
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       '@types/unist': 3.0.2
       ccount: 2.0.1
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
       parse-entities: 4.0.1
       stringify-entities: 4.0.4
@@ -5647,7 +5624,7 @@ snapshots:
 
   mdast-util-mdx@3.0.0:
     dependencies:
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-mdx-expression: 2.0.0
       mdast-util-mdx-jsx: 3.1.2
       mdast-util-mdxjs-esm: 2.0.1
@@ -5659,9 +5636,9 @@ snapshots:
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.0
+      mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -5674,7 +5651,7 @@ snapshots:
   mdast-util-to-hast@13.1.0:
     dependencies:
       '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       '@ungap/structured-clone': 1.2.0
       devlop: 1.1.0
       micromark-util-sanitize-uri: 2.0.0
@@ -6187,8 +6164,6 @@ snapshots:
       estree-walker: 3.0.3
       is-reference: 3.0.2
 
-  picocolors@1.0.0: {}
-
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -6214,7 +6189,7 @@ snapshots:
   postcss@8.4.38:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   preferred-pm@3.1.3:
@@ -6354,7 +6329,7 @@ snapshots:
 
   remark-gfm@4.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       mdast-util-gfm: 3.0.0
       micromark-extension-gfm: 3.0.0
       remark-parse: 11.0.0
@@ -6372,8 +6347,8 @@ snapshots:
 
   remark-parse@11.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
-      mdast-util-from-markdown: 2.0.0
+      '@types/mdast': 4.0.4
+      mdast-util-from-markdown: 2.0.1
       micromark-util-types: 2.0.0
       unified: 11.0.4
     transitivePeerDependencies:
@@ -6382,7 +6357,7 @@ snapshots:
   remark-rehype@11.1.0:
     dependencies:
       '@types/hast': 3.0.4
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       mdast-util-to-hast: 13.1.0
       unified: 11.0.4
       vfile: 6.0.1
@@ -6402,7 +6377,7 @@ snapshots:
 
   remark-stringify@11.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.0
       unified: 11.0.4
 
@@ -6663,10 +6638,10 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  starlight-links-validator@0.8.0(@astrojs/starlight@0.24.0(astro@4.9.3(typescript@5.4.5)))(astro@4.9.3(typescript@5.4.5)):
+  starlight-links-validator@0.8.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
     dependencies:
-      '@astrojs/starlight': 0.24.0(astro@4.9.3(typescript@5.4.5))
-      astro: 4.9.3(typescript@5.4.5)
+      '@astrojs/starlight': 0.24.0(astro@4.10.0(typescript@5.4.5))
+      astro: 4.10.0(typescript@5.4.5)
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.1
       hast-util-has-property: 3.0.0
@@ -6675,10 +6650,10 @@ snapshots:
       mdast-util-to-string: 4.0.0
       unist-util-visit: 5.0.0
 
-  starlight-package-managers@0.6.0(@astrojs/starlight@0.24.0(astro@4.9.3(typescript@5.4.5)))(astro@4.9.3(typescript@5.4.5)):
+  starlight-package-managers@0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
     dependencies:
-      '@astrojs/starlight': 0.24.0(astro@4.9.3(typescript@5.4.5))
-      astro: 4.9.3(typescript@5.4.5)
+      '@astrojs/starlight': 0.24.0(astro@4.10.0(typescript@5.4.5))
+      astro: 4.10.0(typescript@5.4.5)
 
   stdin-discarder@0.2.2: {}
 
