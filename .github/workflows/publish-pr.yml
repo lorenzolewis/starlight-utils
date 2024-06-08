@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpx pkg-pr-new publish ./packages/starlight-utils
+      - run: pnpx pkg-pr-new publish --compact ./packages/starlight-utils
