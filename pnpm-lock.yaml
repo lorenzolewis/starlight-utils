@@ -45,8 +45,8 @@ importers:
         specifier: ^0.33.4
         version: 0.33.4
       starlight-links-validator:
-        specifier: ^0.8.0
-        version: 0.8.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
+        specifier: ^0.9.0
+        version: 0.9.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
       starlight-package-managers:
         specifier: ^0.6.0
         version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
@@ -908,9 +908,6 @@ packages:
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
-
-  '@types/mdast@4.0.3':
-    resolution: {integrity: sha512-LsjtqsyF+d2/yFOYaN22dHZI1Cpwkrj+g06G8+qtUKlhovPW89YhqSnfKtMbkgmEtYpH2gydRNULd6y8mciAFg==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -2380,6 +2377,10 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
+
   pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
@@ -2716,8 +2717,8 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
-  starlight-links-validator@0.8.0:
-    resolution: {integrity: sha512-FYZ5cfV7jSL4wOsWmIkpR+9dH0Z8fxslSQl8IiAv5URfkxLgsaFzjx51FBeSaaS5uVmO5WgfkUjx3N52Jl1/TQ==}
+  starlight-links-validator@0.9.0:
+    resolution: {integrity: sha512-DJQDncEJBuuguPHJKP/SMmYdToWCFeEpZuRV5z9Qqgif3njJiF7dBRDAFdNIM2TCNADAZdseMOcR0iUpnvvjLQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       '@astrojs/starlight': '>=0.15.0'
@@ -4149,10 +4150,6 @@ snapshots:
   '@types/estree@1.0.5': {}
 
   '@types/hast@3.0.4':
-    dependencies:
-      '@types/unist': 3.0.2
-
-  '@types/mdast@4.0.3':
     dependencies:
       '@types/unist': 3.0.2
 
@@ -5645,7 +5642,7 @@ snapshots:
 
   mdast-util-phrasing@4.1.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
       unist-util-is: 6.0.0
 
   mdast-util-to-hast@13.1.0:
@@ -5673,7 +5670,7 @@ snapshots:
 
   mdast-util-to-string@4.0.0:
     dependencies:
-      '@types/mdast': 4.0.3
+      '@types/mdast': 4.0.4
 
   meow@6.1.1:
     dependencies:
@@ -6168,6 +6165,8 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  picomatch@4.0.2: {}
+
   pify@4.0.1: {}
 
   pkg-dir@4.2.0:
@@ -6638,7 +6637,7 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  starlight-links-validator@0.8.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
+  starlight-links-validator@0.9.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
     dependencies:
       '@astrojs/starlight': 0.24.0(astro@4.10.0(typescript@5.4.5))
       astro: 4.10.0(typescript@5.4.5)
@@ -6648,6 +6647,7 @@ snapshots:
       is-absolute-url: 4.0.1
       kleur: 4.1.5
       mdast-util-to-string: 4.0.0
+      picomatch: 4.0.2
       unist-util-visit: 5.0.0
 
   starlight-package-managers@0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
