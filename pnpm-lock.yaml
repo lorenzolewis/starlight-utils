@@ -15,8 +15,8 @@ importers:
         specifier: ^2.27.5
         version: 2.27.5
       astro:
-        specifier: ^4.10.0
-        version: 4.10.0(typescript@5.4.5)
+        specifier: ^4.10.1
+        version: 4.10.1(typescript@5.4.5)
       prettier:
         specifier: ^3.3.1
         version: 3.3.1
@@ -34,22 +34,22 @@ importers:
         version: 0.7.0(prettier-plugin-astro@0.14.0)(prettier@3.3.1)(typescript@5.4.5)
       '@astrojs/starlight':
         specifier: ^0.24.0
-        version: 0.24.0(astro@4.10.0(typescript@5.4.5))
+        version: 0.24.0(astro@4.10.1(typescript@5.4.5))
       '@lorenzo_lewis/starlight-utils':
         specifier: workspace:*
         version: link:../packages/starlight-utils
       astro:
-        specifier: ^4.10.0
-        version: 4.10.0(typescript@5.4.5)
+        specifier: ^4.10.1
+        version: 4.10.1(typescript@5.4.5)
       sharp:
         specifier: ^0.33.4
         version: 0.33.4
       starlight-links-validator:
         specifier: ^0.9.0
-        version: 0.9.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
+        version: 0.9.0(@astrojs/starlight@0.24.0(astro@4.10.1(typescript@5.4.5)))(astro@4.10.1(typescript@5.4.5))
       starlight-package-managers:
         specifier: ^0.6.0
-        version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5))
+        version: 0.6.0(@astrojs/starlight@0.24.0(astro@4.10.1(typescript@5.4.5)))(astro@4.10.1(typescript@5.4.5))
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -58,14 +58,14 @@ importers:
     dependencies:
       astro-integration-kit:
         specifier: ^0.13.3
-        version: 0.13.3(astro@4.10.0(typescript@5.4.5))
+        version: 0.13.3(astro@4.10.1(typescript@5.4.5))
     devDependencies:
       '@astrojs/starlight':
         specifier: ^0.24.0
-        version: 0.24.0(astro@4.10.0(typescript@5.4.5))
+        version: 0.24.0(astro@4.10.1(typescript@5.4.5))
       astro:
-        specifier: ^4.10.0
-        version: 4.10.0(typescript@5.4.5)
+        specifier: ^4.10.1
+        version: 4.10.1(typescript@5.4.5)
 
 packages:
 
@@ -1081,8 +1081,8 @@ packages:
       '@astrojs/db':
         optional: true
 
-  astro@4.10.0:
-    resolution: {integrity: sha512-UNVGGZIwdEPIUumcwgIQnd90b4/PslReY9q3xy/Q6bIq/kvK0duIWCbhFPwf06xu+1tExziP9Jl+klvLXM0LfA==}
+  astro@4.10.1:
+    resolution: {integrity: sha512-7bbnUX1CW+12suz0Do8ef1CihqVjDyUW/H/0piNHZyBE3W/VFt5GP5ZxlPzzJLoGtaXif0aXJ4iPurEem2LpdA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3297,12 +3297,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.0.1(astro@4.10.0(typescript@5.4.5))':
+  '@astrojs/mdx@3.0.1(astro@4.10.1(typescript@5.4.5))':
     dependencies:
       '@astrojs/markdown-remark': 5.1.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.10.0(typescript@5.4.5)
+      astro: 4.10.1(typescript@5.4.5)
       es-module-lexer: 1.5.3
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -3328,15 +3328,15 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5))':
+  '@astrojs/starlight@0.24.0(astro@4.10.1(typescript@5.4.5))':
     dependencies:
-      '@astrojs/mdx': 3.0.1(astro@4.10.0(typescript@5.4.5))
+      '@astrojs/mdx': 3.0.1(astro@4.10.1(typescript@5.4.5))
       '@astrojs/sitemap': 3.1.5
       '@pagefind/default-ui': 1.1.0
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      astro: 4.10.0(typescript@5.4.5)
-      astro-expressive-code: 0.35.3(astro@4.10.0(typescript@5.4.5))
+      astro: 4.10.1(typescript@5.4.5)
+      astro-expressive-code: 0.35.3(astro@4.10.1(typescript@5.4.5))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.1
       hast-util-select: 6.0.2
@@ -4327,18 +4327,18 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro-expressive-code@0.35.3(astro@4.10.0(typescript@5.4.5)):
+  astro-expressive-code@0.35.3(astro@4.10.1(typescript@5.4.5)):
     dependencies:
-      astro: 4.10.0(typescript@5.4.5)
+      astro: 4.10.1(typescript@5.4.5)
       rehype-expressive-code: 0.35.3
 
-  astro-integration-kit@0.13.3(astro@4.10.0(typescript@5.4.5)):
+  astro-integration-kit@0.13.3(astro@4.10.1(typescript@5.4.5)):
     dependencies:
-      astro: 4.10.0(typescript@5.4.5)
+      astro: 4.10.1(typescript@5.4.5)
       pathe: 1.1.2
       recast: 0.23.7
 
-  astro@4.10.0(typescript@5.4.5):
+  astro@4.10.1(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -6637,10 +6637,10 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  starlight-links-validator@0.9.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
+  starlight-links-validator@0.9.0(@astrojs/starlight@0.24.0(astro@4.10.1(typescript@5.4.5)))(astro@4.10.1(typescript@5.4.5)):
     dependencies:
-      '@astrojs/starlight': 0.24.0(astro@4.10.0(typescript@5.4.5))
-      astro: 4.10.0(typescript@5.4.5)
+      '@astrojs/starlight': 0.24.0(astro@4.10.1(typescript@5.4.5))
+      astro: 4.10.1(typescript@5.4.5)
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.1
       hast-util-has-property: 3.0.0
@@ -6650,10 +6650,10 @@ snapshots:
       picomatch: 4.0.2
       unist-util-visit: 5.0.0
 
-  starlight-package-managers@0.6.0(@astrojs/starlight@0.24.0(astro@4.10.0(typescript@5.4.5)))(astro@4.10.0(typescript@5.4.5)):
+  starlight-package-managers@0.6.0(@astrojs/starlight@0.24.0(astro@4.10.1(typescript@5.4.5)))(astro@4.10.1(typescript@5.4.5)):
     dependencies:
-      '@astrojs/starlight': 0.24.0(astro@4.10.0(typescript@5.4.5))
-      astro: 4.10.0(typescript@5.4.5)
+      '@astrojs/starlight': 0.24.0(astro@4.10.1(typescript@5.4.5))
+      astro: 4.10.1(typescript@5.4.5)
 
   stdin-discarder@0.2.2: {}
 
