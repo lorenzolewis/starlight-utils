@@ -27,7 +27,9 @@
     "starlight",
     "plugin",
     "utils",
-    "astro"
+    "astro",
+    "astro-component",
+    "withastro"
   ],
   "homepage": "https://starlight-utils.pages.dev",
   "repository": {
