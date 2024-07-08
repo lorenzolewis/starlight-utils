@@ -2,4 +2,4 @@
 "@lorenzo_lewis/starlight-utils": patch
 ---
 
-Add `hidden` value for `switcherStyle`
+Add `hidden` style for `switcherStyle`. This can be useful when combined with navigation links.
