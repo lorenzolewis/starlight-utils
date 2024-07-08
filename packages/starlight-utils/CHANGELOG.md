@@ -1,5 +1,11 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.1.2
+
+### Patch Changes
+
+- [#48](https://github.com/lorenzolewis/starlight-utils/pull/48) [`668d9db`](https://github.com/lorenzolewis/starlight-utils/commit/668d9db5fec01c13d8f9c7f4f1ca7dd4ffdf85ac) Thanks [@andrii-bodnar](https://github.com/andrii-bodnar)! - Add `hidden` style for `switcherStyle`. This can be useful when combined with navigation links.
+
 ## 0.1.1
 
 ### Patch Changes

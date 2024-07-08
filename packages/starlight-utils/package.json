@@ -1,7 +1,7 @@
 {
   "name": "@lorenzo_lewis/starlight-utils",
   "author": "Lorenzo Lewis",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Utilities to use with your 🌟 Starlight site.",
   "type": "module",
