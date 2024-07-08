@@ -5,7 +5,7 @@ const multiSidebarConfig = z
   .union([
     z.object({
       switcherStyle: z.union([
-        z.enum(["dropdown", "horizontalList"]).default("horizontalList"),
+        z.enum(["dropdown", "horizontalList", "hidden"]).default("horizontalList"),
         z.boolean(),
       ]),
     }),
