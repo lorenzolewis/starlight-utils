@@ -80,6 +80,18 @@ if (
       {config.multiSidebar.switcherStyle === "horizontalList" && (
         <HorizontalList starlightProps={strippedProps} {multiSidebarData} />
       )}
+      {config.multiSidebar.switcherStyle === "hidden" && (
+        multiSidebarData.map(
+          ({ starlightProps, isCurrentSidebar, labelEntry }) => (
+            <div
+              hidden={!isCurrentSidebar}
+              data-starlight-multi-sidebar-label={labelEntry.label}
+            >
+              <Default {...starlightProps} />
+            </div>
+          )
+        )
+      )}
     </>
   ) : (
     <Default {...strippedProps} />

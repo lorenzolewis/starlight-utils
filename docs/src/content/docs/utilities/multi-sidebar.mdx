@@ -51,11 +51,12 @@ export default defineConfig({
 
 ### `multiSidebar`
 
-**Type:** `boolean | { switcherStyle: "dropdown" | "horizontalList" } | undefined`
+**Type:** `boolean | { switcherStyle: "dropdown" | "horizontalList" | "hidden" } | undefined`
 
 - If `true`, the sidebar will be rendered with the `horizontalList` switcher style.
 - If no `multiSidebar` key is set, or if the value is `false` or `undefined`, then the default Starlight sidebar will be used.
 - Otherwise, the value specified in `switcherStyle` will be used.
+- The `hidden` style hides the sidebar switcher. This is useful if you are using [Nav Links](/utilities/nav-links/) and don't need a sidebar switcher.
 
 ## Migration
 
