@@ -13,6 +13,9 @@ export default defineConfig({
       social: {
         github: "https://github.com/lorenzolewis/starlight-utils",
       },
+      editLink: {
+        baseUrl: 'https://github.com/lorenzolewis/starlight-utils/edit/main/docs/',
+      },
       sidebar: [
         {
           label: "Main",
