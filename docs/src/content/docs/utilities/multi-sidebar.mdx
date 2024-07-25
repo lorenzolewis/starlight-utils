@@ -25,7 +25,7 @@ If migrating from that package read the [Migration Steps](#migration) below.
 
 ## Configuration
 
-The sidebar can be enabled by adding the `multiSidebar` object to the Starlight Utils configuration.
+Multi-sidebar can be enabled by adding the `multiSidebar` object to the Starlight Utils configuration.
 
 ```ts {12-14}
 // astro.config.mjs
@@ -48,6 +48,24 @@ export default defineConfig({
   ],
 });
 ```
+
+To define the sidebars, specify a label and contents for each sidebar. Here is a simplified example of the config used for this site:
+
+```ts {12-14}
+// astro.config.mjs
+sidebar: [
+    {
+        label: 'Main',
+        autogenerate: { directory: '/docs' },
+    },
+    {
+        label: 'Demos',
+        autogenerate: { directory: '/demos' },
+        badge: 'New',
+    },
+  ],
+```
+
 
 ### `multiSidebar`
 
