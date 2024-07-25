@@ -49,22 +49,23 @@ export default defineConfig({
 });
 ```
 
-To add tabs to the multi-sidebar, specify a label and directory for each tab you want to add. 
+To define the sidebars, specify a label and contents for each sidebar. Here is a simplified example of the config used for this site:
 
 ```ts {12-14}
 // astro.config.mjs
 sidebar: [
-    {label: 'Main',
-    autogenerate: { directory: 'Main' },
+    {
+        label: 'Main',
+        autogenerate: { directory: '/docs' },
     },
-    {label: 'Demos',
-    autogenerate: { directory: 'Assessments' },
-    badge: 'New',
+    {
+        label: 'Demos',
+        autogenerate: { directory: '/demos' },
+        badge: 'New',
     },
   ],
 ```
 
-If the tab labels don't fit in the Sidebar width, a horizontal scroll bar will be added under the tabs.
 
 ### `multiSidebar`
 
