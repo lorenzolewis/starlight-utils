@@ -33,8 +33,8 @@ importers:
         specifier: ^0.8.3
         version: 0.8.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
       '@astrojs/starlight':
-        specifier: ^0.25.2
-        version: 0.25.2(astro@4.12.2(typescript@5.5.4))
+        specifier: ^0.25.3
+        version: 0.25.3(astro@4.12.2(typescript@5.5.4))
       '@lorenzo_lewis/starlight-utils':
         specifier: workspace:*
         version: link:../packages/starlight-utils
@@ -46,10 +46,10 @@ importers:
         version: 0.33.4
       starlight-links-validator:
         specifier: ^0.9.1
-        version: 0.9.1(@astrojs/starlight@0.25.2(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4))
+        version: 0.9.1(@astrojs/starlight@0.25.3(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4))
       starlight-package-managers:
         specifier: ^0.6.0
-        version: 0.6.0(@astrojs/starlight@0.25.2(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4))
+        version: 0.6.0(@astrojs/starlight@0.25.3(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4))
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -61,8 +61,8 @@ importers:
         version: 0.16.0(astro@4.12.2(typescript@5.5.4))
     devDependencies:
       '@astrojs/starlight':
-        specifier: ^0.25.2
-        version: 0.25.2(astro@4.12.2(typescript@5.5.4))
+        specifier: ^0.25.3
+        version: 0.25.3(astro@4.12.2(typescript@5.5.4))
       astro:
         specifier: ^4.12.2
         version: 4.12.2(typescript@5.5.4)
@@ -119,8 +119,8 @@ packages:
   '@astrojs/sitemap@3.1.5':
     resolution: {integrity: sha512-GLdzJ01387Uzb8RKYpsYLlg/GzoPnGbmDeQNkarSE11i2+l9Qp8Nj/WoTEy9nkTS25fxxy0kxDfJmreeVleCqg==}
 
-  '@astrojs/starlight@0.25.2':
-    resolution: {integrity: sha512-VcFe9yXB0oUIoEU0lLdDA3jnbtjVzSXXpX/oI8OW4ofEHCt8L9V27f+NzRjB0A1+2D6FxAEoAw3NKoP06PLRQA==}
+  '@astrojs/starlight@0.25.3':
+    resolution: {integrity: sha512-XNpGbZ54ungtzen4wQkPXn50D1ZquB51paWrZftA0jWxUkj4b/pP8PijAFrGFypydhvu7Dhl0DjD07lrnSSUhQ==}
     peerDependencies:
       astro: ^4.8.6
 
@@ -2670,7 +2670,7 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/starlight@0.25.2(astro@4.12.2(typescript@5.5.4))':
+  '@astrojs/starlight@0.25.3(astro@4.12.2(typescript@5.5.4))':
     dependencies:
       '@astrojs/mdx': 3.1.2(astro@4.12.2(typescript@5.5.4))
       '@astrojs/sitemap': 3.1.5
@@ -5341,9 +5341,9 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  starlight-links-validator@0.9.1(@astrojs/starlight@0.25.2(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4)):
+  starlight-links-validator@0.9.1(@astrojs/starlight@0.25.3(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4)):
     dependencies:
-      '@astrojs/starlight': 0.25.2(astro@4.12.2(typescript@5.5.4))
+      '@astrojs/starlight': 0.25.3(astro@4.12.2(typescript@5.5.4))
       astro: 4.12.2(typescript@5.5.4)
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.1
@@ -5354,9 +5354,9 @@ snapshots:
       picomatch: 4.0.2
       unist-util-visit: 5.0.0
 
-  starlight-package-managers@0.6.0(@astrojs/starlight@0.25.2(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4)):
+  starlight-package-managers@0.6.0(@astrojs/starlight@0.25.3(astro@4.12.2(typescript@5.5.4)))(astro@4.12.2(typescript@5.5.4)):
     dependencies:
-      '@astrojs/starlight': 0.25.2(astro@4.12.2(typescript@5.5.4))
+      '@astrojs/starlight': 0.25.3(astro@4.12.2(typescript@5.5.4))
       astro: 4.12.2(typescript@5.5.4)
 
   stdin-discarder@0.2.2: {}
