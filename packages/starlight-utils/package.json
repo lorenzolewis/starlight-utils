@@ -13,8 +13,8 @@
   },
   "scripts": {},
   "devDependencies": {
-    "@astrojs/starlight": "^0.25.3",
-    "astro": "^4.12.3"
+    "@astrojs/starlight": "^0.25.5",
+    "astro": "^4.13.3"
   },
   "peerDependencies": {
     "@astrojs/starlight": ">=0.16.0",
