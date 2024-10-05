@@ -2,4 +2,4 @@
 "@lorenzo_lewis/starlight-utils": minor
 ---
 
-Update translation string for dropdown menu label with new Starlight localization API
+Support translated strings introduced in the Starlight 0.28 localization API
