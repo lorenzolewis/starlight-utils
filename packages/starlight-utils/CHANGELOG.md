@@ -1,5 +1,11 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.2.0
+
+### Minor Changes
+
+- [#105](https://github.com/lorenzolewis/starlight-utils/pull/105) [`15ec13f`](https://github.com/lorenzolewis/starlight-utils/commit/15ec13f497f9653bc6ec30b2b5af1649712406e2) Thanks [@huijing](https://github.com/huijing)! - Support translated strings introduced in the Starlight 0.28 localization API
+
 ## 0.1.2
 
 ### Patch Changes
