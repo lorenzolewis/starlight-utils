@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
+    "@astrojs/check": "^0.9.4",
     "@astrojs/starlight": "^0.30.3",
     "@lorenzo_lewis/starlight-utils": "workspace:*",
     "astro": "^5.1.1",
