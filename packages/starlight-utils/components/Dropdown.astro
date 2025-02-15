@@ -1,13 +1,13 @@
 ---
 // Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/components/LanguageSelect.astro
 
-import type { Props as StarlightProps } from "@astrojs/starlight/props";
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import { Icon } from "@astrojs/starlight/components";
 import type { SidebarData } from "./Sidebar.astro";
 import Default from "@astrojs/starlight/components/Sidebar.astro";
 
 interface Props {
-  starlightProps: StarlightProps;
+  starlightProps: StarlightRouteData;
   multiSidebarData: SidebarData[];
 }
 ---

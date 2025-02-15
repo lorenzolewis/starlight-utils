@@ -18,7 +18,7 @@ export type SidebarData = {
 
 // Go through each top-level sidebar item from the Astro config to...
 // 1. Validate the config is set up correctly
-// 2. Create a new derived set of `Astro.props` that only contains one set of sidebar entries
+// 2. Create a new derived set of `Astro.locals.starlightRoute` that only contains one set of sidebar entries
 // 3. Check if the current page being rendered is current page to determine if this sidebar group should be selected
 
 const strippedSidebar = Astro.locals.starlightRoute.sidebar.filter((entry) => {
@@ -28,7 +28,10 @@ const strippedSidebar = Astro.locals.starlightRoute.sidebar.filter((entry) => {
   return true;
 });
 
-const strippedProps: Props = { ...Astro.props, sidebar: strippedSidebar };
+const strippedProps: StarlightRouteData = {
+  ...Astro.locals.starlightRoute,
+  sidebar: strippedSidebar,
+};
 
 const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
   (entry) => {
@@ -44,7 +47,7 @@ const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
 
     // Recursively check if a group of sidebar entries contains the current page
     const findIfIsCurrent = (
-      entry: (typeof Astro.props.sidebar)[number]
+      entry: (typeof Astro.locals.starlightRoute.sidebar)[number]
     ): boolean => {
       if (entry.type === "link") {
         return entry.isCurrent;
@@ -56,7 +59,10 @@ const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
 
     return {
       isCurrentSidebar: isCurrentPage,
-      starlightProps: { ...Astro.props, sidebar: [...entry.entries] },
+      starlightProps: {
+        ...Astro.locals.starlightRoute,
+        sidebar: [...entry.entries],
+      },
       labelEntry: entry,
     };
   }

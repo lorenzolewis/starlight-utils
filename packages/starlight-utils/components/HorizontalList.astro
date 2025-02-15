@@ -1,13 +1,13 @@
 ---
 // Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/user-components/Tabs.astro
 
-import type { Props as StarlightProps } from "@astrojs/starlight/props";
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import type { SidebarData } from "./Sidebar.astro";
 import Sidebar from "@astrojs/starlight/components/Sidebar.astro";
 import { Badge } from "@astrojs/starlight/components";
 
 interface Props {
-  starlightProps: StarlightProps;
+  starlightProps: StarlightRouteData;
   multiSidebarData: SidebarData[];
 }
 
@@ -116,7 +116,7 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
 </style>
 
 <script>
-  class StarlighMultiSidebarTabs extends HTMLElement {
+  class StarlightMultiSidebarTabs extends HTMLElement {
     // A map of sync keys to all tabs that are synced to that key.
 
     tabs: HTMLAnchorElement[];
@@ -189,6 +189,6 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
 
   customElements.define(
     "starlight-multi-sidebar-tabs",
-    StarlighMultiSidebarTabs
+    StarlightMultiSidebarTabs
   );
 </script>
