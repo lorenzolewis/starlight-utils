@@ -1,6 +1,6 @@
 ---
 import config from "virtual:starlight-utils/config";
-import type { Props } from "@astrojs/starlight/props";
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import { AstroError } from "astro/errors";
 import Dropdown from "./Dropdown.astro";
 import HorizontalList from "./HorizontalList.astro";
@@ -8,8 +8,8 @@ import Default from "@astrojs/starlight/components/Sidebar.astro";
 
 export type SidebarData = {
   isCurrentSidebar: boolean;
-  starlightProps: Props;
-  labelEntry: Props["sidebar"][number];
+  starlightProps: StarlightRouteData;
+  labelEntry: StarlightRouteData["sidebar"][number];
 };
 
 // Styles and CSS logic derived from https://daisyui.com/components/collapse/
@@ -21,7 +21,7 @@ export type SidebarData = {
 // 2. Create a new derived set of `Astro.props` that only contains one set of sidebar entries
 // 3. Check if the current page being rendered is current page to determine if this sidebar group should be selected
 
-const strippedSidebar = Astro.props.sidebar.filter((entry) => {
+const strippedSidebar = Astro.locals.starlightRoute.sidebar.filter((entry) => {
   if (config?.navLinks?.leading?.useSidebarLabelled === entry.label) {
     return false;
   }
@@ -80,7 +80,7 @@ if (
       {config.multiSidebar.switcherStyle === "horizontalList" && (
         <HorizontalList starlightProps={strippedProps} {multiSidebarData} />
       )}
-      {config.multiSidebar.switcherStyle === "hidden" && (
+      {config.multiSidebar.switcherStyle === "hidden" &&
         multiSidebarData.map(
           ({ starlightProps, isCurrentSidebar, labelEntry }) => (
             <div
@@ -90,8 +90,7 @@ if (
               <Default {...starlightProps} />
             </div>
           )
-        )
-      )}
+        )}
     </>
   ) : (
     <Default {...strippedProps} />

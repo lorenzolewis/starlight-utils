@@ -1,9 +1,9 @@
 ---
-import type { Props as StarlightProps } from "@astrojs/starlight/props";
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import { AstroError } from "astro/errors";
 import config from "virtual:starlight-utils/config";
 
-interface Props extends StarlightProps {
+interface Props extends StarlightRouteData {
   position: "leading";
 }
 
@@ -17,7 +17,9 @@ if (!sidebarLabel) {
   );
 }
 
-const entry = Astro.props.sidebar.find((entry) => entry.label === sidebarLabel);
+const entry = Astro.locals.starlightRoute.sidebar.find(
+  (entry) => entry.label === sidebarLabel
+);
 
 if (!entry) {
   console.log("Test", Astro.props.sidebar);
