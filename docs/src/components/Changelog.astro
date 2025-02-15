@@ -1,7 +1,7 @@
 ---
 import { compiledContent } from "../../../packages/starlight-utils/CHANGELOG.md";
 
-const content = compiledContent().replace(/(<h1.*?>.*?<\/h1>)/, "");
+const content = (await compiledContent()).replace(/(<h1.*?>.*?<\/h1>)/, "");
 ---
 
 <Fragment set:html={content} />
