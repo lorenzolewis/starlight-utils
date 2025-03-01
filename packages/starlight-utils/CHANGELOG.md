@@ -1,5 +1,11 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.3.0
+
+### Minor Changes
+
+- [#156](https://github.com/lorenzolewis/starlight-utils/pull/156) [`ce97990`](https://github.com/lorenzolewis/starlight-utils/commit/ce9799099ce0e7536033fde9d5d446b2ec87ad10) Thanks [@ringods](https://github.com/ringods)! - Update to support Astro 5
+
 ## 0.2.0
 
 ### Minor Changes
