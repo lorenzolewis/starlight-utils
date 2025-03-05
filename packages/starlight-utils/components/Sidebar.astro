@@ -2,7 +2,7 @@
 import config from "virtual:starlight-utils/config";
 import Dropdown from "./Dropdown.astro";
 import HorizontalList from "./HorizontalList.astro";
-import SubSidebar from "./SubSidebar.astro";
+import SidebarWrapper from "./SidebarWrapper.astro";
 import { AstroError } from "astro/errors";
 import Default from "@astrojs/starlight/components/Sidebar.astro";
 
@@ -37,12 +37,12 @@ if (!Astro.locals.starlightUtils.multiSidebar) {
               hidden={!isCurrentSidebar}
               data-starlight-multi-sidebar-label={label.label}
             >
-              <SubSidebar {sidebar} />
+              <SidebarWrapper {sidebar} />
             </div>
           )
         )}
     </>
   ) : (
-    <SubSidebar />
+    <SidebarWrapper />
   )
 }

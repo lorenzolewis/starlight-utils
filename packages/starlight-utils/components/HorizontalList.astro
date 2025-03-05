@@ -3,7 +3,7 @@
 
 import { Badge } from "@astrojs/starlight/components";
 import { AstroError } from "astro/errors";
-import SubSidebar from "./SubSidebar.astro";
+import SidebarWrapper from "./SidebarWrapper.astro";
 
 let count = 0;
 
@@ -68,7 +68,7 @@ const sidebars = Astro.locals.starlightUtils.multiSidebar.map((sidebar) => {
         role="tabpanel"
         hidden={!isCurrentSidebar}
       >
-        <SubSidebar {sidebar} />
+        <SidebarWrapper {sidebar} />
       </section>
     ))
   }

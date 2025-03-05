@@ -2,7 +2,7 @@
 // Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/components/LanguageSelect.astro
 
 import { Icon } from "@astrojs/starlight/components";
-import SubSidebar from "./SubSidebar.astro";
+import SidebarWrapper from "./SidebarWrapper.astro";
 import { AstroError } from "astro/errors";
 
 if (!Astro.locals.starlightUtils.multiSidebar) {
@@ -51,7 +51,7 @@ if (!Astro.locals.starlightUtils.multiSidebar) {
           hidden={!isCurrentSidebar}
           data-starlight-multi-sidebar-label={label.label}
         >
-          <SubSidebar {sidebar} />
+          <SidebarWrapper {sidebar} />
         </div>
       )
     )
