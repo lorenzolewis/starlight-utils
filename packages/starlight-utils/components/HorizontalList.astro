@@ -116,7 +116,7 @@ const sidebars = Astro.locals.starlightUtils.multiSidebar.map((sidebar) => {
 </style>
 
 <script>
-  class StarlighMultiSidebarTabs extends HTMLElement {
+  class StarlightMultiSidebarTabs extends HTMLElement {
     // A map of sync keys to all tabs that are synced to that key.
 
     tabs: HTMLAnchorElement[];
@@ -189,6 +189,6 @@ const sidebars = Astro.locals.starlightUtils.multiSidebar.map((sidebar) => {
 
   customElements.define(
     "starlight-multi-sidebar-tabs",
-    StarlighMultiSidebarTabs
+    StarlightMultiSidebarTabs
   );
 </script>
