@@ -8,6 +8,7 @@
   "exports": {
     ".": "./index.ts",
     "./components": "./components/index.ts",
+    "./middleware": "./middleware.ts",
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./components/Sidebar.astro": "./components/Sidebar.astro"
   },

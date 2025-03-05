@@ -60,7 +60,7 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
     </ul>
   </div>
   {
-    sidebars.map(({ isCurrentSidebar, starlightProps, tabId, panelId }) => (
+    sidebars.map(({ isCurrentSidebar, tabId, panelId }) => (
       <section
         class="__collapse-content"
         id={panelId}
@@ -68,7 +68,7 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
         role="tabpanel"
         hidden={!isCurrentSidebar}
       >
-        <Sidebar {...starlightProps} />
+        <Sidebar />
       </section>
     ))
   }

@@ -1,15 +1,15 @@
 ---
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import config from "virtual:starlight-utils/config";
-import type { Props } from "@astrojs/starlight/props";
 import { AstroError } from "astro/errors";
 import Dropdown from "./Dropdown.astro";
 import HorizontalList from "./HorizontalList.astro";
-import Default from "@astrojs/starlight/components/Sidebar.astro";
+import SubSidebar from "./SubSidebar.astro";
 
 export type SidebarData = {
   isCurrentSidebar: boolean;
-  starlightProps: Props;
-  labelEntry: Props["sidebar"][number];
+  starlightProps: StarlightRouteData;
+  labelEntry: StarlightRouteData["sidebar"][number];
 };
 
 // Styles and CSS logic derived from https://daisyui.com/components/collapse/
@@ -21,14 +21,17 @@ export type SidebarData = {
 // 2. Create a new derived set of `Astro.props` that only contains one set of sidebar entries
 // 3. Check if the current page being rendered is current page to determine if this sidebar group should be selected
 
-const strippedSidebar = Astro.props.sidebar.filter((entry) => {
+const strippedSidebar = Astro.locals.starlightRoute.sidebar.filter((entry) => {
   if (config?.navLinks?.leading?.useSidebarLabelled === entry.label) {
     return false;
   }
   return true;
 });
 
-const strippedProps: Props = { ...Astro.props, sidebar: strippedSidebar };
+const strippedProps: StarlightRouteData = {
+  ...Astro.locals.starlightRoute,
+  sidebar: strippedSidebar,
+};
 
 const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
   (entry) => {
@@ -44,7 +47,7 @@ const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
 
     // Recursively check if a group of sidebar entries contains the current page
     const findIfIsCurrent = (
-      entry: (typeof Astro.props.sidebar)[number]
+      entry: (typeof Astro.locals.starlightRoute.sidebar)[number]
     ): boolean => {
       if (entry.type === "link") {
         return entry.isCurrent;
@@ -56,7 +59,10 @@ const multiSidebarData: Array<SidebarData> = strippedProps.sidebar.map(
 
     return {
       isCurrentSidebar: isCurrentPage,
-      starlightProps: { ...Astro.props, sidebar: [...entry.entries] },
+      starlightProps: {
+        ...Astro.locals.starlightRoute,
+        sidebar: [...entry.entries],
+      },
       labelEntry: entry,
     };
   }
@@ -80,20 +86,17 @@ if (
       {config.multiSidebar.switcherStyle === "horizontalList" && (
         <HorizontalList starlightProps={strippedProps} {multiSidebarData} />
       )}
-      {config.multiSidebar.switcherStyle === "hidden" && (
-        multiSidebarData.map(
-          ({ starlightProps, isCurrentSidebar, labelEntry }) => (
-            <div
-              hidden={!isCurrentSidebar}
-              data-starlight-multi-sidebar-label={labelEntry.label}
-            >
-              <Default {...starlightProps} />
-            </div>
-          )
-        )
-      )}
+      {config.multiSidebar.switcherStyle === "hidden" &&
+        multiSidebarData.map(({ isCurrentSidebar, labelEntry }) => (
+          <div
+            hidden={!isCurrentSidebar}
+            data-starlight-multi-sidebar-label={labelEntry.label}
+          >
+            <SubSidebar />
+          </div>
+        ))}
     </>
   ) : (
-    <Default {...strippedProps} />
+    <SubSidebar />
   )
 }

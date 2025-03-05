@@ -6,5 +6,9 @@ declare module "virtual:starlight-utils/config" {
 declare namespace App {
   type StarlightLocals = import("@astrojs/starlight").StarlightLocals;
   // Define the `locals.t` object in the context of a plugin.
-  interface Locals extends StarlightLocals {}
+  interface Locals extends StarlightLocals {
+    starlightUtils: {
+      navLinks?: Array<StarlightLocals["sidebar"]>;
+    };
+  }
 }
