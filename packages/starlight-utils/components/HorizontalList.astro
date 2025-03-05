@@ -1,19 +1,19 @@
 ---
 // Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/user-components/Tabs.astro
 
-import type { StarlightRouteData } from "@astrojs/starlight/route-data";
-import type { SidebarData } from "./Sidebar.astro";
-import Sidebar from "@astrojs/starlight/components/Sidebar.astro";
 import { Badge } from "@astrojs/starlight/components";
-
-interface Props {
-  starlightProps: StarlightRouteData;
-  multiSidebarData: SidebarData[];
-}
+import { AstroError } from "astro/errors";
+import SubSidebar from "./SubSidebar.astro";
 
 let count = 0;
 
-const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
+if (!Astro.locals.starlightUtils.multiSidebar) {
+  throw new AstroError(
+    "An error occurred with starlight-utils. Please [file an issue on GitHub](https://github.com/lorenzolewis/starlight-utils/issues)."
+  );
+}
+
+const sidebars = Astro.locals.starlightUtils.multiSidebar.map((sidebar) => {
   const id = count++;
   return {
     panelId: "sidebar-panel-" + id,
@@ -27,22 +27,22 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
   <div class="tablist-wrapper not-content">
     <ul role="tablist">
       {
-        sidebars.map(({ labelEntry, isCurrentSidebar, panelId, tabId }) => (
+        sidebars.map(({ label, isCurrentSidebar, panelId, tabId }) => (
           <li role="presentation" class="tab">
-            {labelEntry.type === "link" && (
+            {label.type === "link" && (
               <a
                 role="tab"
                 href={"#" + panelId}
                 id={tabId}
                 aria-selected={isCurrentSidebar ? "true" : "false"}
                 tabindex={isCurrentSidebar ? 0 : -1}
-                {...labelEntry.attrs}
+                {...label.attrs}
               >
-                <span>{labelEntry.label}</span>
-                {labelEntry.badge && <Badge {...labelEntry.badge} />}
+                <span>{label.label}</span>
+                {label.badge && <Badge {...label.badge} />}
               </a>
             )}
-            {labelEntry.type !== "link" && (
+            {label.type !== "link" && (
               <a
                 role="tab"
                 href={"#" + panelId}
@@ -50,8 +50,8 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
                 aria-selected={isCurrentSidebar ? "true" : "false"}
                 tabindex={isCurrentSidebar ? 0 : -1}
               >
-                <span>{labelEntry.label}</span>
-                {labelEntry.badge && <Badge {...labelEntry.badge} />}
+                <span>{label.label}</span>
+                {label.badge && <Badge {...label.badge} />}
               </a>
             )}
           </li>
@@ -60,7 +60,7 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
     </ul>
   </div>
   {
-    sidebars.map(({ isCurrentSidebar, tabId, panelId }) => (
+    sidebars.map(({ isCurrentSidebar, tabId, panelId, sidebar }) => (
       <section
         class="__collapse-content"
         id={panelId}
@@ -68,7 +68,7 @@ const sidebars = Astro.props.multiSidebarData.map((sidebar) => {
         role="tabpanel"
         hidden={!isCurrentSidebar}
       >
-        <Sidebar />
+        <SubSidebar {sidebar} />
       </section>
     ))
   }

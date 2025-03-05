@@ -1,14 +1,14 @@
 ---
 // Component adapted from https://github.com/withastro/starlight/blob/1576e32925276cf35f8f77641d406328eec73fb6/packages/starlight/components/LanguageSelect.astro
 
-import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import { Icon } from "@astrojs/starlight/components";
-import type { SidebarData } from "./Sidebar.astro";
-import Default from "@astrojs/starlight/components/Sidebar.astro";
+import SubSidebar from "./SubSidebar.astro";
+import { AstroError } from "astro/errors";
 
-interface Props {
-  starlightProps: StarlightRouteData;
-  multiSidebarData: SidebarData[];
+if (!Astro.locals.starlightUtils.multiSidebar) {
+  throw new AstroError(
+    "An error occurred with starlight-utils. Please [file an issue on GitHub](https://github.com/lorenzolewis/starlight-utils/issues)."
+  );
 }
 ---
 
@@ -19,37 +19,39 @@ interface Props {
     </span>
     <select>
       {
-        Astro.props.multiSidebarData.map(({ isCurrentSidebar, labelEntry }) => (
-          <>
-            {labelEntry.type === "link" && (
-              <option
-                value={labelEntry.label}
-                selected={isCurrentSidebar}
-                set:html={labelEntry.label}
-                {...labelEntry.attrs}
-              />
-            )}
-            {labelEntry.type !== "link" && (
-              <option
-                value={labelEntry.label}
-                selected={isCurrentSidebar}
-                set:html={labelEntry.label}
-              />
-            )}
-          </>
-        ))
+        Astro.locals.starlightUtils.multiSidebar.map(
+          ({ isCurrentSidebar, label }) => (
+            <>
+              {label.type === "link" && (
+                <option
+                  value={label.label}
+                  selected={isCurrentSidebar}
+                  set:html={label.label}
+                  {...label.attrs}
+                />
+              )}
+              {label.type !== "link" && (
+                <option
+                  value={label.label}
+                  selected={isCurrentSidebar}
+                  set:html={label.label}
+                />
+              )}
+            </>
+          )
+        )
       }
     </select>
     <Icon name="down-caret" class="icon" />
   </label>
   {
-    Astro.props.multiSidebarData.map(
-      ({ starlightProps, isCurrentSidebar, labelEntry }) => (
+    Astro.locals.starlightUtils.multiSidebar.map(
+      ({ isCurrentSidebar, label, sidebar }) => (
         <div
           hidden={!isCurrentSidebar}
-          data-starlight-multi-sidebar-label={labelEntry.label}
+          data-starlight-multi-sidebar-label={label.label}
         >
-          <Default {...starlightProps} />
+          <SubSidebar {sidebar} />
         </div>
       )
     )

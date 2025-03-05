@@ -1,5 +1,14 @@
 ---
+import { type StarlightRouteData } from "@astrojs/starlight/route-data";
 import Default from "@astrojs/starlight/components/Sidebar.astro";
+
+interface Props {
+  sidebar?: StarlightRouteData["sidebar"];
+}
+
+if (Astro.props.sidebar) {
+  Astro.locals.starlightRoute.sidebar = Astro.props.sidebar;
+}
 ---
 
-<Default />
+<Default renderDefault={true} />

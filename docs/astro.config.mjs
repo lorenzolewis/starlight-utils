@@ -14,7 +14,8 @@ export default defineConfig({
         github: "https://github.com/lorenzolewis/starlight-utils",
       },
       editLink: {
-        baseUrl: 'https://github.com/lorenzolewis/starlight-utils/edit/main/docs/',
+        baseUrl:
+          "https://github.com/lorenzolewis/starlight-utils/edit/main/docs/",
       },
       sidebar: [
         {
@@ -44,7 +45,7 @@ export default defineConfig({
       plugins: [
         starlightLinksValidatorPlugin(),
         starlightUtils({
-          multiSidebar: true,
+          multiSidebar: { switcherStyle: "horizontalList" },
           navLinks: {
             leading: { useSidebarLabelled: "leading" },
           },

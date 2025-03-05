@@ -9,6 +9,12 @@ declare namespace App {
   interface Locals extends StarlightLocals {
     starlightUtils: {
       navLinks?: Array<StarlightLocals["sidebar"]>;
+      multiSidebar?: Array<{
+        isCurrentSidebar: boolean;
+        sidebar: Array<StarlightLocals["sidebar"]>;
+        label: StarlightLocals["sidebar"][number];
+      }>;
+      // Array<StarlightLocals["sidebar"]>;
     };
   }
 }
