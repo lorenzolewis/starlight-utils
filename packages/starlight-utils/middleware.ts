@@ -89,6 +89,10 @@ export const onRequest = defineRouteMiddleware((context) => {
         label: entry,
       };
     });
+    // If the current page being built isn't contained in a sidebar, then render the first sidebar
+    if (data[0] && !data.some(({ isCurrentSidebar }) => isCurrentSidebar)) {
+      data[0].isCurrentSidebar = true;
+    }
     context.locals.starlightUtils.multiSidebar = data;
   }
 });
