@@ -3,25 +3,27 @@ import { AstroError } from "astro/errors";
 import config from "virtual:starlight-utils/config";
 
 export const onRequest = defineRouteMiddleware((context) => {
+  // Initialize object
   context.locals.starlightUtils = {};
-  const sidebarLabel = config?.navLinks?.leading?.useSidebarLabelled;
 
-  if (!sidebarLabel) {
-    throw new AstroError(
-      `No sidebar label was specified for the ${JSON.stringify(config?.navLinks?.leading)} entry in the Astro config.`
-    );
-  }
-
-  // Extract the navigation links
+  // Logic for navLinks
   if (config?.navLinks?.leading) {
-    const sidebarData = context.locals.starlightRoute.sidebar;
-    const navLinks: typeof sidebarData = [];
-    const sidebar: typeof sidebarData = [];
+    const sidebarLabel = config?.navLinks?.leading?.useSidebarLabelled;
 
-    sidebarData.forEach((entry) => {
+    if (!sidebarLabel) {
+      throw new AstroError(
+        `No sidebar label was specified for the ${JSON.stringify(config?.navLinks?.leading)} entry in the Astro config.`
+      );
+    }
+
+    const starlightRouteSidebar = context.locals.starlightRoute.sidebar;
+    const navLinks: typeof starlightRouteSidebar = [];
+    const filteredSidebar: typeof starlightRouteSidebar = [];
+
+    starlightRouteSidebar.forEach((entry) => {
       const condition =
         entry.label === config?.navLinks?.leading?.useSidebarLabelled;
-      condition ? navLinks.push(entry) : sidebar.push(entry);
+      condition ? navLinks.push(entry) : filteredSidebar.push(entry);
     });
 
     if (navLinks.length != 1 || !navLinks[0]) {
@@ -46,9 +48,9 @@ export const onRequest = defineRouteMiddleware((context) => {
       );
     }
 
-    // Set the value
+    // Set navLinks value
     context.locals.starlightUtils.navLinks = [...navLinks[0].entries];
-    // Remove from the original object
-    context.locals.starlightRoute.sidebar = sidebar;
+    // Set the filtered sidebar
+    context.locals.starlightRoute.sidebar = filteredSidebar;
   }
 });
