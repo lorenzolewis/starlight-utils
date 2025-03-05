@@ -45,7 +45,7 @@ export default defineConfig({
       plugins: [
         starlightLinksValidatorPlugin(),
         starlightUtils({
-          multiSidebar: { switcherStyle: "horizontalList" },
+          multiSidebar: true,
           navLinks: {
             leading: { useSidebarLabelled: "leading" },
           },
