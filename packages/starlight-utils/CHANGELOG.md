@@ -1,5 +1,11 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.3.1
+
+### Patch Changes
+
+- [#170](https://github.com/lorenzolewis/starlight-utils/pull/170) [`5a0f41c`](https://github.com/lorenzolewis/starlight-utils/commit/5a0f41c8819cc490002cae72db76157623ee1331) Thanks [@lorenzolewis](https://github.com/lorenzolewis)! - Add support for Starlight 0.32
+
 ## 0.3.0
 
 ### Minor Changes
