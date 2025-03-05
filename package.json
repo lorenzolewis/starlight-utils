@@ -16,8 +16,5 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.6.2"
   },
-  "packageManager": "pnpm@9.1.1",
-  "devDependencies": {
-    "pkg-pr-new": "^0.0.40"
-  }
+  "packageManager": "pnpm@9.1.1"
 }

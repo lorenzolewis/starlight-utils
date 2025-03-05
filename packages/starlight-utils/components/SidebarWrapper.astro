@@ -1,0 +1,17 @@
+---
+// This component is used for a manual work-around for re-defining StarlightRouteData.
+// This is required because middleware is only updated once per page render.
+// Since the original sidebar uses middleware this makes it where the local is overridden manually.
+import { type StarlightRouteData } from "@astrojs/starlight/route-data";
+import Default from "@astrojs/starlight/components/Sidebar.astro";
+
+interface Props {
+  sidebar?: StarlightRouteData["sidebar"];
+}
+
+if (Astro.props.sidebar) {
+  Astro.locals.starlightRoute.sidebar = Astro.props.sidebar;
+}
+---
+
+<Default renderDefault={true} />

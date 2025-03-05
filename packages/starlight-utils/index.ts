@@ -7,7 +7,7 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
   return {
     name: "starlight-utils",
     hooks: {
-      setup({ addIntegration, config, updateConfig }) {
+      setup({ addIntegration, config, updateConfig, addRouteMiddleware }) {
         addIntegration(integration(utilsConfig));
         const componentOverrides: typeof config.components = {};
         componentOverrides.Sidebar =
@@ -21,6 +21,9 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
             ...componentOverrides,
             ...config.components,
           },
+        });
+        addRouteMiddleware({
+          entrypoint: "@lorenzo_lewis/starlight-utils/middleware",
         });
       },
     },

@@ -8,16 +8,17 @@
   "exports": {
     ".": "./index.ts",
     "./components": "./components/index.ts",
+    "./middleware": "./middleware.ts",
     "./components/SiteTitle.astro": "./components/SiteTitle.astro",
     "./components/Sidebar.astro": "./components/Sidebar.astro"
   },
   "scripts": {},
   "devDependencies": {
-    "@astrojs/starlight": "^0.30.0",
+    "@astrojs/starlight": "^0.32.2",
     "astro": "^5.4.1"
   },
   "peerDependencies": {
-    "@astrojs/starlight": ">=0.30.0",
+    "@astrojs/starlight": ">=0.32.0",
     "astro": ">=5"
   },
   "dependencies": {
