@@ -1,5 +1,13 @@
 # @lorenzo_lewis/starlight-utils
 
+## 0.3.2
+
+### Patch Changes
+
+- [#177](https://github.com/lorenzolewis/starlight-utils/pull/177) [`19e07ee`](https://github.com/lorenzolewis/starlight-utils/commit/19e07ee4c1ca7725cae289844b3925f85f27d6de) Thanks [@lorenzolewis](https://github.com/lorenzolewis)! - Fix issue where sidebar was being overridden when not needed, causing issues with other Starlight plugins.
+
+- [#179](https://github.com/lorenzolewis/starlight-utils/pull/179) [`aa33352`](https://github.com/lorenzolewis/starlight-utils/commit/aa33352478cdd955da5d9324c75ec902d37260dd) Thanks [@lorenzolewis](https://github.com/lorenzolewis)! - Improve compatibility with `starlight-auto-sidebar`.
+
 ## 0.3.1
 
 ### Patch Changes
