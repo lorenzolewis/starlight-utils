@@ -10,8 +10,10 @@ function plugin(userConfig?: StarlightUtilsConfig): StarlightPlugin {
       setup({ addIntegration, config, updateConfig, addRouteMiddleware }) {
         addIntegration(integration(utilsConfig));
         const componentOverrides: typeof config.components = {};
-        componentOverrides.Sidebar =
-          "@lorenzo_lewis/starlight-utils/components/Sidebar.astro";
+        if (utilsConfig?.multiSidebar) {
+          componentOverrides.Sidebar =
+            "@lorenzo_lewis/starlight-utils/components/Sidebar.astro";
+        }
         if (utilsConfig?.navLinks?.leading) {
           componentOverrides.SiteTitle =
             "@lorenzo_lewis/starlight-utils/components/SiteTitle.astro";
