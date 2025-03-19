@@ -8,8 +8,8 @@ interface Props {
 
 const { withConfiguration = false } = Astro.props;
 
-const utilities = await getCollection("docs", ({ id }) => {
-  return id.startsWith("utilities");
+const utilities = await getCollection("docs", ({ slug }) => {
+  return slug.startsWith("utilities");
 });
 ---
 
@@ -20,7 +20,9 @@ const utilities = await getCollection("docs", ({ id }) => {
         title={util.data.title}
         description={util.data.description}
         href={
-          withConfiguration ? "/" + util.id + "/#configuration" : "/" + util.id
+          withConfiguration
+            ? "/" + util.slug + "/#configuration"
+            : "/" + util.slug
         }
       />
     ))
