@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
-    "@astrojs/starlight": "^0.32.5",
+    "@astrojs/starlight": "^0.33.0",
     "@lorenzo_lewis/starlight-utils": "workspace:*",
     "astro": "^5.6.1",
     "sharp": "^0.33.5",
