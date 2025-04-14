@@ -48,8 +48,8 @@ importers:
         specifier: ^0.15.0
         version: 0.15.0(@astrojs/starlight@0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1)))
       starlight-package-managers:
-        specifier: ^0.10.0
-        version: 0.10.0(@astrojs/starlight@0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1)))
+        specifier: ^0.11.0
+        version: 0.11.0(@astrojs/starlight@0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1)))
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -2042,8 +2042,8 @@ packages:
     peerDependencies:
       '@astrojs/starlight': '>=0.32.0'
 
-  starlight-package-managers@0.10.0:
-    resolution: {integrity: sha512-ndliTHXzaCIQ2FFnq5KIH5Uhs9FCACeS3XQMtx/35aSPXzeGsoGxBNreC1zBif4yzGZRCJN3kXBqjUO82WDtcA==}
+  starlight-package-managers@0.11.0:
+    resolution: {integrity: sha512-ItOgeF4YYI4lKaeqGBuRBNsmPTXQv16Pc7U+hzkvJoR9HzOxhk2wSNkRzxSnqX5OZmmsAwDy49NYqpFyzkO8Bw==}
     engines: {node: '>=18.17.1'}
     peerDependencies:
       '@astrojs/starlight': '>=0.22.0'
@@ -5178,7 +5178,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  starlight-package-managers@0.10.0(@astrojs/starlight@0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1))):
+  starlight-package-managers@0.11.0(@astrojs/starlight@0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1))):
     dependencies:
       '@astrojs/starlight': 0.32.5(astro@5.6.1(rollup@4.39.0)(typescript@5.8.2)(yaml@2.5.1))
 
