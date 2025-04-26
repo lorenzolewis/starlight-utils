@@ -1,5 +1,5 @@
 {
-  "name": "modi-starlight-utils",
+  "name": "starlight-utils-monorepo",
   "type": "module",
   "version": "0.0.1",
   "license": "MIT",
@@ -16,19 +16,5 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.8.2"
   },
-  "packageManager": "pnpm@9.1.1",
-  "description": "Modified Starlight Utils",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThomasSingleton/starlight-utils.git"
-  },
-  "author": "",
-  "bugs": {
-    "url": "https://github.com/ThomasSingleton/starlight-utils/issues"
-  },
-  "homepage": "https://github.com/ThomasSingleton/starlight-utils#readme"
+  "packageManager": "pnpm@9.1.1"
 }
