@@ -1,11 +1,12 @@
 ---
 // Styles adapted from https://github.com/withastro/starlight/blob/main/packages/starlight/components/SidebarSublist.astro
 // and https://www.figma.com/design/GrDkcguAR7tSWPFuLVDixq/Theme---Starlight-Docs?node-id=454-34753&t=fgVYGvAg6ftBSpJY-0
+const navLinksMobileDisplay = Astro.locals.starlightUtils.navLinksMobileDisplay || "flex";
 ---
 
 {
   Astro.locals.starlightUtils.navLinks && (
-    <ul>
+    <ul class="nav-links" style={`--nav-links-mobile-display: ${navLinksMobileDisplay};`}>
       {Astro.locals.starlightUtils.navLinks.map((entry) => (
         <li>
           <a
@@ -22,12 +23,13 @@
 }
 
 <style>
-  ul {
+  .nav-links {
     display: flex;
     list-style: none;
     padding: 0;
     gap: var(--sl-nav-gap);
   }
+
   a {
     text-decoration: none;
     color: var(--sl-color-gray-1);
@@ -44,9 +46,9 @@
     font-weight: 600;
   }
 
-  @media (min-width: 50rem) {
-    a {
-      font-size: var(--sl-text-sm);
+  @media (max-width: 50rem) {
+    .nav-links {
+      display: var(--nav-links-mobile-display, none);
     }
   }
 </style>
