@@ -22,7 +22,7 @@
     "astro": ">=5"
   },
   "dependencies": {
-    "astro-integration-kit": "^0.18.0"
+    "astro-integration-kit": "^0.19.1"
   },
   "keywords": [
     "starlight",
