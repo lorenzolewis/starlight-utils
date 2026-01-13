@@ -29,6 +29,7 @@ export const configSchema = z
   .object({
     multiSidebar: multiSidebarConfig,
     navLinks: navLinksConfig,
+    navLinksMobileDisplay: z.enum(["none", "flex"]).optional(),
   })
   .optional();
 

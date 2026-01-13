@@ -57,6 +57,11 @@ export const onRequest = defineRouteMiddleware((context) => {
     context.locals.starlightRoute.sidebar = filteredSidebar;
   }
 
+  // Logic for navLinksMobileDisplay
+  if (config?.navLinksMobileDisplay) {
+    context.locals.starlightUtils.navLinksMobileDisplay = config.navLinksMobileDisplay;
+  }
+
   // Logic for multi-sidebar
   if (config?.multiSidebar) {
     // All entries must be group types
